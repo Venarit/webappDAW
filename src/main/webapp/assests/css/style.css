@@ -1,0 +1,133 @@
+
+@charset "UTF-8";
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	list-style: none;
+	text-decoration: none;
+}
+
+body{
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonscontainer{
+    animation: fadein 4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    margin-top: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    width: 80%;
+    border: 2px solid #ccc;
+    
+}
+
+button {
+  animation: logoAnimation 4s forwards;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 14px 60px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px 40px;
+  cursor: pointer;
+}
+
+.cola1{
+    background-color: #99A98F;
+}
+
+.cola2{
+    background-color: #B3C890;
+    
+}
+
+.cola3{
+    background-color: #C1D0B5;
+    
+}
+
+.cola4{
+    background-color: #AEBDCA;
+}
+
+.cola5{
+    
+    background-color: #7895B2;
+}
+
+.container{
+    text-align: justify;
+    image-orientation: center;
+    width: 100%;
+    margin-top: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container img {
+    animation: logoAnimation 4s forwards;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+h1 {
+    animation: fadein 5s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #8C8C8C ;	
+    font-family: 'Syncopate', sans-serif;
+    text-align:center;
+    font-size: 600%;
+    font-weight: 10;
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes logoAnimation {
+    from{
+        top: -30%;
+        opacity: 0;
+    }
+    to{
+        top: 10%;
+        opacity: 1;
+    }
+}
+
+@keyframes botones{
+    from{
+        top:-100%;
+    }
+    to{
+        top:100%
+    }
+}
