@@ -18,8 +18,8 @@ body{
 }
 
 .buttonscontainer{
-    animation: fadein 4s;
     display: flex;
+    flex-direction: center;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -29,12 +29,12 @@ body{
     margin-right: auto;
     margin-bottom: auto;
     width: 80%;
-    border: 2px solid #ccc;
     
 }
 
-button {
-  animation: logoAnimation 4s forwards;
+.button {
+    opacity: 0;
+  transform: translateY(200%);
   background-color: #4CAF50;
   border: none;
   border-radius: 20px;
@@ -48,25 +48,29 @@ button {
 }
 
 .cola1{
+    animation: botones 3s ease-out 1.5s forwards;
     background-color: #99A98F;
 }
 
 .cola2{
+    animation: botones 3s ease-out 2s forwards;
     background-color: #B3C890;
     
 }
 
 .cola3{
+    animation: botones 3s ease-out 2.5s forwards;
     background-color: #C1D0B5;
     
 }
 
 .cola4{
+    animation: botones 3s ease-out 3s forwards;
     background-color: #AEBDCA;
 }
 
 .cola5{
-    
+    animation: botones 3s ease-out 3.5s forwards;
     background-color: #7895B2;
 }
 
@@ -125,9 +129,11 @@ h1 {
 
 @keyframes botones{
     from{
-        top:-100%;
+        transform: translateY(150%);
+        opacity: 0;
     }
     to{
-        top:100%
+        transform: translateY(0);
+        opacity: 1;
     }
 }

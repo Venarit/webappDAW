@@ -1,0 +1,66 @@
+body{
+    min-height: 100vh;
+}
+
+.containerpestaña{
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.containerpestaña button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.containerpestaña button:hover {
+  background-color: #ddd;
+}
+
+.containerpestaña button.active {
+  background-color: #ccc;
+}
+
+.pestañacont{
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+
+
+.sidenav{
+    height: 100%;
+    width: 400px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: #111;
+    
+    top: 0;
+    left: 0;
+}
+
+.main{
+    height: 100%;
+    width: 100%;
+    margin-left:400px;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    
+}
+
+.avatar {
+    
+}
