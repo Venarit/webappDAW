@@ -20,9 +20,15 @@
     <body>
         
             <div class="sidenav">
-                <h1> sidenav </h1>
-                <h1> iniciar sesion </h1><!-- comment -->
-                <h1> registro </h1>
+                <img src="../assests/avatars/noavatar.png" alt="Avatar" class="avatar"/>
+               
+                    <input type="text" placeholder="Correo electrónico" name="email" required><!-- comment -->
+                    <input type="text" placeholder="Contraseña" name="password" required><!-- comment -->
+                    <button type="button" class="ingresabtn">Ingresa</button>
+                    <h3>No tienes cuenta? <a href="signup.jsp">Registrate</a></h3>
+                    
+                
+                
             </div>
 
             <div class="main">
