@@ -14,10 +14,10 @@ h1{
 }
 p{
     color: #60BCD3;	
-    font-family: 'Syncopate', sans-serif;
+    font-family: monospace;
     text-align:center;
     margin-bottom: 70px;
-    font-size: 130%;
+    font-size: 200%;
 }
 
 .prevbtn{
@@ -38,23 +38,41 @@ img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 500px;
-    height: 600px;
+    width: 450px;
+    height: 550px;
     margin: auto;
     border-radius: 45px;
     background: linear-gradient(145deg, #e5e5e5, #c1c1c1);
     box-shadow:  33px 33px 0px #bcbcbc,
              -33px -33px 0px #f0f0f0;
+    margin-bottom: 25px;
 }
 
 input[type=text] {
+    font-family: monospace;
+    font-size: 120%;
     opacity: 0.8;
     width: 70%;
     padding: 20px;
     margin: 10px 0 22px 0;
     display: inline-block;
-    font-size: 100%;
     border: none;
     background: #f1f1f1;
     border-radius: 40px;
+    background: #ffffff;
+    box-shadow: inset 7px 7px 14px #b0b0b0,
+                inset -7px -7px 14px #ffffff;
+}
+
+.registrobtn{
+    font-family: monospace;
+    opacity: 0.8;
+    font-size: 120%;
+    margin-top: 5px;
+    padding: 15px;
+    width: 75%;
+    margin-top: 25px;
+    border-radius: 40px;
+    border-color: #92cedd;
+    background: #92cedd;
 }

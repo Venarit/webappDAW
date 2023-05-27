@@ -24,13 +24,14 @@
         </a>
         
         <h1>Nutriguia</h1>
-        <p>Crear cuenta</p>
+        <p>Registro</p>
         
         <div class="container">
             <input type="text" placeholder="Correo electrónico" name="email" required><!-- comment -->
             <input type="text" placeholder="Nombre de usuario" name="usuario" required>
             <input type="text" placeholder="Contraseña" name="password" required>
             <input type="text" placeholder="Repetir contraseña" name="password2" required><!-- comment -->
+            <button type="button" class="registrobtn">Crear cuenta</button>
         </div>
     </body>
 </html>
