@@ -3,7 +3,7 @@
     Created on : 14 may 2023, 02:03:08
     Author     : Naomi
 --%>
-
+<%@page import="Modelos.Usuarios"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,11 +27,15 @@
         <p>Registro</p>
         
         <div class="container">
-            <input type="text" placeholder="Correo electrónico" name="email" required><!-- comment -->
-            <input type="text" placeholder="Nombre de usuario" name="usuario" required>
-            <input type="text" placeholder="Contraseña" name="password" required>
-            <input type="text" placeholder="Repetir contraseña" name="password2" required><!-- comment -->
-            <button type="button" class="registrobtn">Crear cuenta</button>
+            <form method="post" action="signup" class="signup-form" id="signup-form">
+                <input type="text" placeholder="Correo electrónico" name="email" required><!-- comment -->
+                <input type="text" placeholder="Nombre" name="nombre" required>
+                <input type="text" placeholder="Apellido" name="apellido" required>
+                <input type="text" placeholder="Contraseña" name="password" required>
+                <input type="text" placeholder="Repetir contraseña" name="password2" required><!-- comment -->
+                <button type="submit" class="registrobtn" value="signup">Crear cuenta</button>
+            </form>
+            
         </div>
     </body>
 </html>
