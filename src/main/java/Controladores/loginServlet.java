@@ -43,12 +43,13 @@ public class loginServlet extends HttpServlet {
          boolean loginExitoso = userDAO.userLogin(usuario);
          
          if (loginExitoso) {
+            
+            response.sendRedirect(request.getContextPath() +"/Views/mainview.jsp");
             HttpSession session = request.getSession();
-            session.setAttribute("nombre", usuario.getNombre());
-            response.sendRedirect("Views/mainview.jsp"); 
+            request.getSession().setAttribute("nombre", usuario.getNombre());
             
         } else {
-            response.sendRedirect("Views/mainview.jsp");
+            response.sendRedirect(request.getContextPath() +"/Views/mainview.jsp");
         }
         
     }

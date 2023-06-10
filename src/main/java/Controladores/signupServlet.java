@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Datos.UsuariosDAO;
 import Modelos.Usuarios;
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author Naomi
@@ -31,6 +32,8 @@ public class signupServlet extends HttpServlet {
         int registros = userDAO.agregar(usuario);
         
         if (registros > 0) {
+            System.out.println("Registro añadido correctamente");
+            
             response.sendRedirect("Views/mainview.jsp");
         } else {
             PrintWriter out = response.getWriter();

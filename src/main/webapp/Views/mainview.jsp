@@ -21,7 +21,8 @@
     </head>
     <body>
         
-            <div class="sidenav">
+            <div class="sidenav" id="sidenavContent">
+                
                 <% if(session.getAttribute("nombre")==null) {%>
                     <img src="../assests/avatars/noavatar.png" alt="Avatar" class="avatar"/>
                     
@@ -35,7 +36,7 @@
                     
                     
                 <%} else {%>
-                    <img src="../assests/avatars/man.png" alt=""/>
+                    <img src="../assests/avatars/man.png" alt="Avatar" class="avatar"/>
                     <h3>Bienvenido <%= session.getAttribute("nombre") %> </h3>
                 <% } %>
                     
@@ -87,6 +88,7 @@
                 document.getElementById(opcion).style.display = "block";
                 evento.currentTarget.className += " active";
             }
+            
         </script>
        
 

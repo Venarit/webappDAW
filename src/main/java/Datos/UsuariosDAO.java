@@ -168,7 +168,7 @@ public class UsuariosDAO {
         
         try{
             conn = Conexion.getConnection();
-            state = conn.prepareStatement(updateSQL);
+            state = conn.prepareStatement(deleteSQL);
             state.setInt(1,usuario.getIdusuario());
             
             registros = state.executeUpdate();
