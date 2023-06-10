@@ -27,15 +27,35 @@
         <p>Registro</p>
         
         <div class="container">
-            <form method="post" action="signup" class="signup-form" id="signup-form">
-                <input type="text" placeholder="Correo electrónico" name="email" required><!-- comment -->
-                <input type="text" placeholder="Nombre" name="nombre" required>
-                <input type="text" placeholder="Apellido" name="apellido" required>
-                <input type="text" placeholder="Contraseña" name="password" required>
-                <input type="text" placeholder="Repetir contraseña" name="password2" required><!-- comment -->
+            <form action="<%= request.getContextPath()%>/signup"  method="post" class="signup-form" id="signup-form" onsubmit="return validarFormulario()">
+                <input type="text" placeholder="Correo electrónico" name="email" id="email" required>
+                <input type="text" placeholder="Nombre" name="nombre"  required>
+                <input type="text" placeholder="Apellido" name="apellidop" required>
+                <input type="password" placeholder="Contraseña" name="password" id="password" required>
+                <input type="password" placeholder="Repetir contraseña" name="password2" id="password2" required>
                 <button type="submit" class="registrobtn" value="signup">Crear cuenta</button>
             </form>
             
         </div>
+                
+                <script>
+                    function validarFormulario(){
+                        var email = document.getElementById("email").value;
+                        var password = document.getElementById("password").value;
+                        var password2 = document.getElementById("password2").value;
+                        
+                        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(email)){
+                            alert("Ingrese un email válido");
+                            return false;
+                        }
+                        if(password !== password2){
+                            alert("Las contraseñas no coinciden");
+                            return false;
+                        }
+                        
+                        return true;
+                    }
+                </script>
     </body>
 </html>

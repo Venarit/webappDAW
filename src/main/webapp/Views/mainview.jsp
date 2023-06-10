@@ -22,11 +22,13 @@
     <body>
         
             <div class="sidenav">
-                <% if(session.getAttribute("name")==null) {%>
+                <% if(session.getAttribute("nombre")==null) {%>
                     <img src="../assests/avatars/noavatar.png" alt="Avatar" class="avatar"/>
-                    <form action='login' method="post">
+                    
+                    <form action="<%= request.getContextPath()%>/login"  method="post">
+                        
                         <input type="text" placeholder="Correo electrónico" name="email" required><!-- comment -->
-                        <input type="text" placeholder="Contraseña" name="password" required><!-- comment -->
+                        <input type="password" placeholder="Contraseña" name="password" required><!-- comment -->
                         <button type="submit" class="ingresabtn">Ingresa</button>
                         <h3>No tienes cuenta? <a href="signup.jsp">Registrate</a></h3>
                     </form>
@@ -34,7 +36,7 @@
                     
                 <%} else {%>
                     <img src="../assests/avatars/man.png" alt=""/>
-                    <h3>Bienvenido <%= session.getAttribute("name") %> </h3>
+                    <h3>Bienvenido <%= session.getAttribute("nombre") %> </h3>
                 <% } %>
                     
                 
@@ -86,6 +88,8 @@
                 evento.currentTarget.className += " active";
             }
         </script>
+       
+
         
     </body>
 </html>

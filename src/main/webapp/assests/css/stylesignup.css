@@ -55,7 +55,7 @@ img{
     align-items: center;
 }
 
-input[type=text] {
+input{
     font-family: monospace;
     font-size: 120%;
     opacity: 0.8;

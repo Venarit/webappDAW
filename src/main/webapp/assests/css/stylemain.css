@@ -62,7 +62,7 @@ body{
   margin-bottom: 30px;
 }
 
-input[type=text] {
+input{
     opacity: 0.8;
     width: 70%;
     padding: 15px;
@@ -72,6 +72,7 @@ input[type=text] {
     border: none;
     background: #f1f1f1;
 }
+
 
 .ingresabtn{
     width: 78%;

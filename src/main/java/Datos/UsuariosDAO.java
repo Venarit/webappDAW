@@ -16,9 +16,12 @@ import java.util.*;
 public class UsuariosDAO {
     
     public static final String selectSQL = "SELECT * FROM usuarios";
-    public static final String insertSQL = "INSERT INTO usuarios(nombre, apellidop, email, contraseña) VALUES (?,?,?,?)";
-    public static final  String updateSQL = "UPDATE usuarios SET nombre = ?, apellidop = ?, email = ?, contraseña = ?, WHERE idusuario = ? ";
+    public static final String insertSQL = "INSERT INTO usuarios(nombre, apellidop, email, password) VALUES (?,?,?,?)";
+    public static final  String updateSQL = "UPDATE usuarios SET nombre = ?, apellidop = ?, email = ?, password = ?, WHERE idusuario = ? ";
     public static final String deleteSQL = "DELETE FROM usuarios WHERE idusuario = ? ";
+    public static final String checkData = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
+    public static final String checkEmail = "SELECT COUNT(*) FROM usuarios WHERE email = ?";
+
     
     public List<Usuarios> seleccionar(){
         Connection conn = null;
@@ -37,9 +40,9 @@ public class UsuariosDAO {
                 String nombre = result.getString("nombre");
                 String apellidop = result.getString("apellidop");
                 String email = result.getString("email");
-                String contraseña = result.getString("contraseña");
+                String password = result.getString("password");
                 
-                user = new Usuarios(idusuario, nombre, apellidop, email, contraseña);
+                user = new Usuarios(idusuario, nombre, apellidop, email, password);
                 usuarios.add(user);
             }
             
@@ -62,14 +65,50 @@ public class UsuariosDAO {
         return usuarios;
     }
     
+    
+     private boolean emailExiste(String email) {
+        Connection conn = null;
+        PreparedStatement state = null;
+        ResultSet result = null;
+
+        try {
+            conn = Conexion.getConnection();
+            state = conn.prepareStatement(checkEmail);
+            state.setString(1, email);
+            result = state.executeQuery();
+
+            if (result.next()) {
+                int count = result.getInt(1);
+                return count > 0;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Conexion.close(result);
+            Conexion.close(state);
+            Conexion.close(conn);
+        }
+
+        return false;
+    }
+    
+    
     public int agregar(Usuarios usuario){
         
         Connection conn = null;
         PreparedStatement state = null;
+        
         int registros = 0;
         
         try{
             conn = Conexion.getConnection();
+            
+            if (emailExiste(usuario.getEmail())) {
+                System.out.println("El correo electronico ya esta en uso");
+                return registros;
+            }
+            
             state = conn.prepareStatement(insertSQL);
             state.setString(1, usuario.getNombre());
             state.setString(2, usuario.getApellidop());
@@ -80,18 +119,18 @@ public class UsuariosDAO {
             
             if(registros>0)
                 System.out.println("Registro añadido correctamente");
-            
-            Conexion.close(state);
-            Conexion.close(conn);
-            Usuarios usuarioNuevo = new Usuarios();
-            
+         
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            Conexion.close(state);
+            Conexion.close(conn);
         }
         
         return registros;
     }
     
+   
     public int modificar(Usuarios usuario){
         
         Connection conn = null;
@@ -146,5 +185,48 @@ public class UsuariosDAO {
         }
         return registros;
     }
+    
+    public boolean userLogin(Usuarios usuario){
+        Connection conn = null;
+        PreparedStatement state = null;
+        ResultSet result = null;
+        
+        try{
+            conn = Conexion.getConnection();
+            state = conn.prepareStatement(checkData);
+            
+            state.setString(1, usuario.getEmail());
+            state.setString(2, usuario.getContraseña());
+            
+            result = state.executeQuery();
+            
+            if(result.next()){
+                
+                String email = result.getString("email");
+                String password = result.getString("password");
+                
+                if (email.equals(usuario.getEmail()) && password.equals(usuario.getContraseña())) {
+                    System.out.println("Login correcto");
+                    return true;
+                } else {
+                    System.out.println("Login incorrecto");
+                    return false;
+                }
+            } else {
+                System.out.println("Login incorrecto");
+                return false;
+            }
+            
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            Conexion.close(state);
+            Conexion.close(conn);
+            Conexion.close(result);
+        }
+        
+        return false;
+    }
+
     
 }

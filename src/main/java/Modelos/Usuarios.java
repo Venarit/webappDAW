@@ -10,7 +10,7 @@ package Modelos;
  */
 public class Usuarios {
     private int idusuario;
-    private String nombre, apellidop, email, contraseña;
+    private String nombre, apellidop, email, password;
     
     public Usuarios() {
     }
@@ -21,20 +21,20 @@ public class Usuarios {
     }
     
     //INSERTAR
-    public Usuarios(String nombre, String apellidop, String email, String contraseña){
+    public Usuarios(String nombre, String apellidop, String email, String password){
         this.nombre = nombre;
         this.apellidop = apellidop;
         this.email = email;
-        this.contraseña = contraseña;
+        this.password = password;
     }
     
     //MODIFICAR
-    public Usuarios(int idusuario, String nombre, String apellidop, String email, String contraseña){
+    public Usuarios(int idusuario, String nombre, String apellidop, String email, String password){
         this.idusuario = idusuario;
         this.nombre = nombre;
         this.apellidop = apellidop;
         this.email = email;
-        this.contraseña = contraseña;
+        this.password = password;
     }
     
     public int getIdusuario(){
@@ -62,16 +62,16 @@ public class Usuarios {
         this.email = email;
     }
     public String getContraseña(){
-        return contraseña;
+        return password;
     }
-    public void setContraseña(String contraseña){
-        this.contraseña = contraseña;
+    public void setContraseña(String password){
+        this.password = password;
     }
     
     @Override
     public String toString(){
         return "usuarios{" + "idusuario= " + idusuario + ", nombre= " 
                 + nombre + ", apellidop= " + apellidop + ", email= " 
-                + email + ", contraseña= " + contraseña + '}';
+                + email + ", password= " + password + '}';
     }
 }
