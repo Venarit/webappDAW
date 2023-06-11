@@ -1,10 +1,12 @@
 package Modelos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Naomi
  */
-public class Usuarios {
+public class Usuarios implements Serializable {
     private int idusuario;
     private String nombre, apellidop, email, password;
     

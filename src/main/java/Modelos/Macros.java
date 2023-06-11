@@ -1,9 +1,12 @@
 package Modelos;
+
+import java.io.Serializable;
+
 /**
  *
  * @author Naomi
  */
-public class Macros {
+public class Macros implements Serializable{
     private int idmacros;
     private String nombre, descripcion;
     private double hco, lipidos, proteina;

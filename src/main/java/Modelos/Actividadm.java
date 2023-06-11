@@ -1,9 +1,12 @@
 package Modelos;
+
+import java.io.Serializable;
+
 /**
  *
  * @author Naomi
  */
-public class Actividadm {
+public class Actividadm implements Serializable{
     private int idactividad;
     private double factor;
     private String nombre, descripcion;

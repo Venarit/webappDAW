@@ -1,9 +1,12 @@
 package Modelos;
+
+import java.io.Serializable;
+
 /**
  *
  * @author Naomi
  */
-public class Objetivos {
+public class Objetivos implements Serializable{
     private int idobjetivo, calorias;
     private String nombre, descripcion;
     

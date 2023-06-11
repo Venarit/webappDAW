@@ -26,13 +26,13 @@
         
         <%
         if (session == null || session.getAttribute("nombre") == null) {
-            response.sendRedirect("index.html");
+            response.sendRedirect("../index.html");
         } else%> 
         <%{%>
         
             <div class="sidenav" id="sidenavContent">
                 <img src="../assests/avatars/man.png" alt="Avatar" class="avatar"/>
-                <h3>Bienvenid@ <%= session.getAttribute("nombre") %> </h3>
+                <h3>Bienvenid@ <%= session.getAttribute("nombre") %> ID: <%= session.getAttribute("idusuario") %> </h3>
                 <% 
                     List<Perfiles> perfiles = (List<Perfiles>) session.getAttribute("perfiles");
 
@@ -59,6 +59,7 @@
                     <h1>opcion1</h1>
                     <% out.print("Today is:"+java.util.Calendar.getInstance().getTime()); %>  
                     <p>no se que poner aqui una calculadora creo</p>
+                    <div id="inch-calculator-icw" data-ct="tdee" data-cw="100%" data-ch="1050" data-cv="MTE2ODY1MDUzMTg="><div id="inch-calculator-icwh">TDEE Calculator</div><div id="inch-calculator-icwf"><a id="inch-calculator-icwi" href="https://www.inchcalculator.com/tdee-calculator/" target="_blank"><img id="inch-calculator-icwl" src="https://cdn.inchcalculator.com/e/inch-calculator-logo-tiny.png" alt="Inch Calculator Logo"><span id="inch-calculator-icwb">Inch Calculator</span></a></div></div><script src="https://cdn.inchcalculator.com/e/widgets.min.js" async defer></script>
                 </div>
                 
                 <div id="op2" class="pestañacont">

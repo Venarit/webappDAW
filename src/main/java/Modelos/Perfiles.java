@@ -1,10 +1,12 @@
 package Modelos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Naomi
  */
-public class Perfiles {
+public class Perfiles implements Serializable{
     private int r_usuario, idperfil, altura, edad, bmr, tdee, r_actividad, r_objetivo, r_macros;
     private double peso;
     private String nombreperfil, sexo;
@@ -24,8 +26,6 @@ public class Perfiles {
         this.r_usuario = r_usuario;
         this.altura = altura;
         this.edad = edad;
-        this.bmr = bmr;
-        this.tdee = tdee;
         this.r_actividad = r_actividad;
         this.r_objetivo = r_objetivo;
         this.r_macros = r_macros;

@@ -25,6 +25,7 @@ public class prflServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         HttpSession session = request.getSession();
+        
         int r_usuario = (int) session.getAttribute("idusuario");
         
         String nombreperfil = request.getParameter("nombreperfil");

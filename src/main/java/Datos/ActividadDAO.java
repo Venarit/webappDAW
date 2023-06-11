@@ -36,13 +36,6 @@ public class ActividadDAO {
             Conexion.close(state);
             Conexion.close(conn);
             
-            for(Actividadm actividad: actividades){
-                System.out.println("Id Actividad: "+ actividad.getIdactividad());
-                System.out.println("Nombre: "+ actividad.getNombre());
-                System.out.println("Factor: "+ actividad.getFactor());
-                System.out.println("Descripcion: "+ actividad.getDescripcion());
-                System.out.println(" \n ");
-            }
         } catch (Exception e){
             e.printStackTrace();
         }

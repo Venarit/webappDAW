@@ -47,6 +47,7 @@ public class loginServlet extends HttpServlet {
          
         if (loginExitoso) {
             
+            session.setAttribute("idusuario", usuario.getIdusuario());
             session.setAttribute("nombre", usuario.getNombre());
             response.sendRedirect(request.getContextPath() +"/Views/mainview.jsp");
             

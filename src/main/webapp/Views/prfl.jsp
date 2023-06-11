@@ -3,9 +3,12 @@
     Created on : 10 jun 2023, 12:41:17
     Author     : Naomi
 --%>
+<%@page import="Modelos.Objetivos"%>
 <%@page import="java.util.List"%>
 <%@page import="Modelos.Perfiles"%>
 <%@page import="Modelos.Macros"%>
+<%@page import="Modelos.Actividadm"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,7 +24,13 @@
         <script src="https://kit.fontawesome.com/773b0b6249.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%
+        if (session == null || session.getAttribute("nombre") == null) {
+            response.sendRedirect("../index.html");
+        } else{ 
+        %> 
+        
+        <h1>Crear perfil</h1>
         <div clas="cont">
             <form action="<%= request.getContextPath()%>/prflServlet"  method="post" class="prfl-form" id="prfl-form">
                 <div class="row">
@@ -36,7 +45,7 @@
                         <input type="number" placeholder="Ingrese la altura en centimetros" name="altura" min="1" max="300" required>
 
                         <label for="edad">Edad:</label>
-                        <input type="number" placeholder="Ingrese la edad" name="edad" min="1" max="120"  required>
+                        <input type="number" placeholder="Ingrese la edad" name="edad" min="18" max="80"  required>
                     </div>
                     
                     <div class="col-50">
@@ -85,11 +94,32 @@
             </form>
             
         </div>
-                
+        
+        <% List<Actividadm> listaact = (List<Actividadm>) request.getAttribute("actividad"); %>
+        <% List<Objetivos> listaobj = (List<Objetivos>) request.getAttribute("objetivo"); %>
+        <% List<Macros> listamac = (List<Macros>) request.getAttribute("macros"); %>
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal1')">&times;</span>
                 <p>Modal 1</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%if(listaact != null) {
+                        for (Actividadm actividad : listaact) { %>
+                            <tr>
+                                <td><%= actividad.getNombre() %></td>
+                                <td><%= actividad.getDescripcion() %></td>
+                            </tr>
+                        <%} 
+                        }%>
+                    </tbody>
+                </table>
             </div>
         </div>
         
@@ -97,6 +127,24 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal2')">&times;</span>
                 <p>Modal 2</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%if(listaobj != null) {
+                        for (Objetivos objetivo : listaobj) { %>
+                            <tr>
+                                <td><%= objetivo.getNombre() %></td>
+                                <td><%= objetivo.getDescripcion() %></td>
+                            </tr>
+                        <%} 
+                        }%>
+                    </tbody>
+                </table>
             </div>
         </div>   
                
@@ -104,9 +152,28 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal3')">&times;</span>
                 <p>Modal 3</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%if(listamac != null) {
+                        for (Macros macros : listamac) { %>
+                            <tr>
+                                <td><%= macros.getNombre() %></td>
+                                <td><%= macros.getDescripcion() %></td>
+                            </tr>
+                        <%} 
+                        }%>
+                    </tbody>
+                </table>
             </div>
-        </div>   
-        
+        </div>
+                    
+        <%}%>
         <script>
             // Función para abrir el modal
             function openModal(modalId) {

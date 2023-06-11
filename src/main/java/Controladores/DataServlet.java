@@ -31,26 +31,25 @@ public class DataServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         ActividadDAO actividadDAO = new ActividadDAO();
         List<Actividadm> actividades = actividadDAO.seleccionar();
-        request.setAttribute("actividades",actividades);
+        request.getSession().setAttribute("actividad", actividades);
         
         ObjetivosDAO objetivosDAO = new ObjetivosDAO();
         List<Objetivos> objetivos = objetivosDAO.seleccionar();
-        request.setAttribute("objetivos", objetivos);
+        request.setAttribute("objetivo", objetivos);
         
         MacrosDAO macrosDAO = new MacrosDAO();
         List<Macros> macros = macrosDAO.seleccionar();
         request.setAttribute("macros", macros);
         
         request.getRequestDispatcher("/Views/prfl.jsp").forward(request, response);
-        
+       
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         processRequest(request, response);
     }
     @Override
     public String getServletInfo() {

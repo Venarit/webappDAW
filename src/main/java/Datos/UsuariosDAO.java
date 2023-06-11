@@ -61,7 +61,6 @@ public class UsuariosDAO {
         return usuarios;
     }
     
-    
      private boolean emailExiste(String email) {
         Connection conn = null;
         PreparedStatement state = null;
@@ -205,6 +204,8 @@ public class UsuariosDAO {
                     System.out.println("Login correcto");
                     String nombre = result.getString("nombre");
                     usuario.setNombre(nombre);
+                    int idusuario = result.getInt("idusuario");
+                    usuario.setIdusuario(idusuario);
                     return true;
                 } else {
                     System.out.println("Login incorrecto");
