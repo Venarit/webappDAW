@@ -18,36 +18,106 @@
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Syncopate&display=swap" rel="stylesheet">
         
         <link href="../assests/css/styleprfl.css" rel="stylesheet" type="text/css"/>
+        <script src="https://kit.fontawesome.com/773b0b6249.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <h1>Hello World!</h1>
         <div clas="cont">
             <form action="<%= request.getContextPath()%>/prflServlet"  method="post" class="prfl-form" id="prfl-form">
-           
-                <label for="nombreperfil">Nombre del Perfil</label>
-                <input type="text" placeholder="Ingrese el Nombre del Perfil" name="nombreperfil" id="nombreperfil" required>
+                <div class="row">
+                    <div class="col-50">
+                        <label for="nombreperfil">Nombre del Perfil:</label>
+                        <input type="text" placeholder="Ingrese el nombre del perfil" name="nombreperfil" id="nombreperfil" required>
+
+                        <label for="peso">Peso (kg):</label>
+                        <input type="text" placeholder="Ingrese el peso en kilogramos" name="peso" required>
+
+                        <label for="altura">Altura (cm):</label>
+                        <input type="number" placeholder="Ingrese la altura en centimetros" name="altura" min="1" max="300" required>
+
+                        <label for="edad">Edad:</label>
+                        <input type="number" placeholder="Ingrese la edad" name="edad" min="1" max="120"  required>
+                    </div>
+                    
+                    <div class="col-50">
+                        
+                        <label for="sexo">Género:</label>
+                        <select id="sexo" name="sexo">
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+                        
+                        <label for="r_actividad"><i class="fa-solid fa-circle-info" onclick="openModal('modal1')"></i> Nivel de actividad:</label>
+                        <select id="r_actividad" name="r_actividad">
+                            <option value="1">Sedentario</option>
+                            <option value="2">Ligeramente activo</option>
+                            <option value="3">Moderadamente activo</option>
+                            <option value="4">Muy activo</option>
+                            <option value="5">Extremadamente activo</option>
+                        </select>
+
+                        <label for="r_objetivo"><i class="fa-solid fa-circle-info" onclick="openModal('modal2')"></i> Objetivo:</label>
+                        <select id="r_objetivo" name="r_objetivo">
+                            <option value="1">Mantener</option>
+                            <option value="2">Perdida leve</option>
+                            <option value="3">Perdida moderada</option>
+                            <option value="4">Ganar musculo/peso</option>
+                        </select>
+
+                        <label for="r_macros"><i class="fa-solid fa-circle-info" onclick="openModal('modal3')"></i> Distribución de macronutrientes:</label>
+                        <select id="r_macros" name="r_macros">
+                            <option value="1">Balanceado</option>
+                            <option value="2">Bajo en lipidos</option>
+                            <option value="3">Alta en proteina</option>
+                            <option value="4">Alta en carbohidratos</option>
+                            <option value="5">Keto</option>
+                        </select>
+                        
+                    </div>
+                    
+                </div>
                 
-                <label for="sexo">Género</label>
-                <select id="sexo" name="sexo">
-                    <option value="Femenino">Femenino</option>
-                    <option value="Masculino">Masculino</option>
-                </select>
-                
-                <label for="peso">Peso (kg)</label>
-                <input type="text" placeholder="Ingrese el peso en kg" name="peso" required>
-                
-                <label for="altura">Altura (cm)</label>
-                <input type="number" name="altura" min="1" max="300" required>
-                
-                <label for="edad">Edad</label>
-                <input type="number" name="edad" min="1" max="120"  required>
                 
                 <button type="submit" class="crearprflbtn" value="crearprfl">Crear perfil</button>
             
+                
+                
             </form>
             
         </div>
+                
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <p>Modal 1</p>
+            </div>
+        </div>
         
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <p>Modal 2</p>
+            </div>
+        </div>   
+               
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <p>Modal 3</p>
+            </div>
+        </div>   
+        
+        <script>
+            // Función para abrir el modal
+            function openModal(modalId) {
+              document.getElementById(modalId).style.display = "block";
+            }
+
+            // Función para cerrar el modal
+            function closeModal(modalId) {
+              document.getElementById(modalId).style.display = "none";
+            }
+        </script>
         
     </body>
 </html>
