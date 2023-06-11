@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Datos;
 
 import Modelos.Usuarios;
@@ -207,6 +203,8 @@ public class UsuariosDAO {
                 
                 if (email.equals(usuario.getEmail()) && password.equals(usuario.getContraseña())) {
                     System.out.println("Login correcto");
+                    String nombre = result.getString("nombre");
+                    usuario.setNombre(nombre);
                     return true;
                 } else {
                     System.out.println("Login incorrecto");

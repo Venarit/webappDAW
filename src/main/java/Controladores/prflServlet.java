@@ -10,49 +10,60 @@ import javax.servlet.http.HttpServletResponse;
 
 import Datos.UsuariosDAO;
 import Modelos.Usuarios;
+import Datos.PerfilesDAO;
+import Modelos.Perfiles;
 import javax.servlet.http.HttpSession;
 /**
  *
  * @author Naomi
  */
-@WebServlet(name = "signupServlet", value = {"/signup"})
-public class signupServlet extends HttpServlet {
+@WebServlet(name = "prflServlet", urlPatterns = {"/prflServlet"})
+public class prflServlet extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String nombre = request.getParameter("nombre");
-        String apellidop = request.getParameter("apellidop");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        HttpSession session = request.getSession();
+        int r_usuario = (int) session.getAttribute("idusuario");
         
-        Usuarios usuario = new Usuarios(nombre, apellidop, email, password);
-        UsuariosDAO userDAO = new UsuariosDAO();
-        int registros = userDAO.agregar(usuario);
+        String nombreperfil = request.getParameter("nombreperfil");
+        String sexo = request.getParameter("sexo");
+        double peso = Double.parseDouble(request.getParameter("peso"));
+        int altura = Integer.parseInt(request.getParameter("altura"));
+        int edad = Integer.parseInt(request.getParameter("edad"));
+        int r_actividad = Integer.parseInt(request.getParameter("r_actividad"));
+        int r_objetivo = Integer.parseInt(request.getParameter("r_objetivo"));
+        int r_macros = Integer.parseInt(request.getParameter("r_macros"));
+        
+        Perfiles perfil = new Perfiles(r_usuario, altura, edad, r_actividad, r_objetivo, r_macros, peso, nombreperfil, sexo);
+        PerfilesDAO prflDAO = new PerfilesDAO();
+        int registros = prflDAO.agregar(perfil);
         
         if (registros > 0) {
-            System.out.println("Registro añadido correctamente");
-            
+            System.out.println("Perfil añadido correctamente");
+            response.sendRedirect("Views/mainview.jsp");
         } else {
             PrintWriter out = response.getWriter();
             out.println("Error en el registro. Por favor, intenta nuevamente.");
         }
-        
     }
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
+
     @Override
     public String getServletInfo() {
-        return "Registro de cuentas";
+        return "Short description";
     }// </editor-fold>
 
 }

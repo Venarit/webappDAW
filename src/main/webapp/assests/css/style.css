@@ -22,9 +22,8 @@ body{
     flex-direction: center;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    position: absolute;
-    margin-top: 25%;
+    position: fixed;
+    margin-top: 22%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
@@ -39,39 +38,22 @@ body{
   border: none;
   border-radius: 20px;
   color: white;
-  padding: 14px 60px;
+  padding: 15px 200px;
   text-align: center;
   display: inline-block;
-  font-size: 16px;
-  margin: 15px 40px;
+  font-size: 18px;
+  margin: 15px 60px;
   cursor: pointer;
 }
 
 .cola1{
-    animation: botones 3s ease-out 1.5s forwards;
-    background-color: #99A98F;
-}
-
-.cola2{
     animation: botones 3s ease-out 2s forwards;
-    background-color: #B3C890;
-    
-}
-
-.cola3{
-    animation: botones 3s ease-out 2.5s forwards;
-    background-color: #C1D0B5;
-    
-}
-
-.cola4{
-    animation: botones 3s ease-out 3s forwards;
-    background-color: #AEBDCA;
+    background-color: #add8e6;
 }
 
 .cola5{
-    animation: botones 3s ease-out 3.5s forwards;
-    background-color: #7895B2;
+    animation: botones 3s ease-out 2.5s forwards;
+    background-color: #A6D79C ;
 }
 
 .container{

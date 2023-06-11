@@ -1,0 +1,24 @@
+h1{
+    color: #60BCD3;	
+    font-family: monospace;
+    text-align:center;
+    margin-bottom: 70px;
+    font-size: 200%;
+}
+
+cont{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background: linear-gradient(145deg, #e5e5e5, #c1c1c1);
+}
+
+form{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: monospace;
+}

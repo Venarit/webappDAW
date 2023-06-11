@@ -18,10 +18,8 @@
         
     </head>
     <body>
-      
-        <a href="mainview.jsp">
-            <img src="../assests/img/previous.png" alt="prev"/>
-        </a>
+       
+        <img src="../assests/img/previous.png" onclick="history.back()" alt="prev"/>
         
         <h1>Nutriguia</h1>
         <p>Registro</p>

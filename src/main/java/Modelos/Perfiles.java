@@ -18,7 +18,7 @@ public class Perfiles {
     }
     
     //INSERTAR
-    public Perfiles(int r_usuario, int altura, int edad, int bmr, int tdee, int r_actividad, 
+    public Perfiles(int r_usuario, int altura, int edad, int r_actividad, 
             int r_objetivo, int r_macros, double peso, String nombreperfil, String sexo){
         
         this.r_usuario = r_usuario;

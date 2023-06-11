@@ -4,6 +4,9 @@
     Author     : Naomi
 --%>
 <%@page import="Modelos.Usuarios"%>
+<%@page import="Modelos.Perfiles"%>
+<%@ page import="java.util.List" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -21,27 +24,27 @@
     </head>
     <body>
         
+        <%
+        if (session == null || session.getAttribute("nombre") == null) {
+            response.sendRedirect("index.html");
+        } else%> 
+        <%{%>
+        
             <div class="sidenav" id="sidenavContent">
-                
-                <% if(session.getAttribute("nombre")==null) {%>
-                    <img src="../assests/avatars/noavatar.png" alt="Avatar" class="avatar"/>
-                    
-                    <form action="<%= request.getContextPath()%>/login"  method="post">
-                        
-                        <input type="text" placeholder="Correo electrónico" name="email" required><!-- comment -->
-                        <input type="password" placeholder="Contraseña" name="password" required><!-- comment -->
-                        <button type="submit" class="ingresabtn">Ingresa</button>
-                        <h3>No tienes cuenta? <a href="signup.jsp">Registrate</a></h3>
-                    </form>
-                    
-                    
-                <%} else {%>
-                    <img src="../assests/avatars/man.png" alt="Avatar" class="avatar"/>
-                    <h3>Bienvenido <%= session.getAttribute("nombre") %> </h3>
+                <img src="../assests/avatars/man.png" alt="Avatar" class="avatar"/>
+                <h3>Bienvenid@ <%= session.getAttribute("nombre") %> </h3>
+                <% 
+                    List<Perfiles> perfiles = (List<Perfiles>) session.getAttribute("perfiles");
+
+                    if (perfiles == null || perfiles.isEmpty()) {
+                    %>
+                    <h3>Todavía no tienes ningún perfil. Crea uno.</h3>
+                    <% } else { %>
+                    <!-- Aquí puedes mostrar los perfiles existentes -->
                 <% } %>
-                    
                 
-                
+                <button onclick="location.href='prfl.jsp'">Crear perfil</button>
+
             </div>
 
             <div class="main">
@@ -73,8 +76,10 @@
                     <p>info macros</p>
                 </div>
             </div>
-        
+            
+        <%}%>
         <script>
+            
             function openPage(evento, opcion){
                 var i, pestañacont, pestaña;
                 pestañacont = document.getElementsByClassName("pestañacont");

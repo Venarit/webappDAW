@@ -37,19 +37,21 @@ public class loginServlet extends HttpServlet {
         UsuariosDAO userDAO = new UsuariosDAO();
         
         Usuarios usuario = new Usuarios();
+        
+        HttpSession session = request.getSession();
+        
         usuario.setEmail(email);
         usuario.setContraseña(password);
         
-         boolean loginExitoso = userDAO.userLogin(usuario);
+        boolean loginExitoso = userDAO.userLogin(usuario);
          
-         if (loginExitoso) {
+        if (loginExitoso) {
             
+            session.setAttribute("nombre", usuario.getNombre());
             response.sendRedirect(request.getContextPath() +"/Views/mainview.jsp");
-            HttpSession session = request.getSession();
-            request.getSession().setAttribute("nombre", usuario.getNombre());
             
         } else {
-            response.sendRedirect(request.getContextPath() +"/Views/mainview.jsp");
+            response.sendRedirect(request.getContextPath() +"/Views/login.jsp");
         }
         
     }
