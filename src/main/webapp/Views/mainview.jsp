@@ -57,12 +57,12 @@
                                     <div class="col-50">
                                         <p>Sexo: <%= perfil.getSexo() %></p>
                                         <p>Edad: <%= perfil.getEdad() %></p>
-                                        <button class="editar">Editar</button>
+                                        <button class="editar" onclick="location.href='<%= request.getContextPath()%>/prflData?idperfil=<%= perfil.getIdperfil() %>'">Editar</button>
                                     </div>
                                     <div class="col-50">
                                         <p>Altura: <%= perfil.getAltura()%> cm</p>
                                         <p>Peso: <%= perfil.getPeso() %> kg</p>
-                                        <button class="seleccionar" onclick="location.href='<%= request.getContextPath()%>/DataServlet'">Seleccionar</button>
+                                        <button class="seleccionar">Seleccionar</button>
                                     </div>
                                         
                                 </div>
@@ -81,7 +81,7 @@
                     <button class="pestaña" onclick="openPage(event, 'op1')">Distribucion macros</button>
                     <button class="pestaña" onclick="openPage(event, 'op2')">Opcion2</button>
                     <button class="pestaña" onclick="openPage(event, 'op3')">Opcion3</button>
-                    <button class="pestaña" onclick="openPage(event, 'op4')">Opcion4</button>
+                    <button class="pestaña" onclick="openPage(event, 'op4'); ">Opcion4</button>
                     
                    
                 </div>

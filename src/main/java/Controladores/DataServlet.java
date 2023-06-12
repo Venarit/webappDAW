@@ -19,47 +19,66 @@ import Modelos.Perfiles;
 import Modelos.Usuarios;
 import static java.lang.System.out;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Naomi
  */
-@WebServlet(name = "DataServlet", urlPatterns = {"/DataServlet"})
+@WebServlet(name = "DataServlet", value = {"/DataServlet", "/prflData"})
 public class DataServlet extends HttpServlet {
-
     
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    ActividadDAO actividadDAO = new ActividadDAO();
+    ObjetivosDAO objetivosDAO = new ObjetivosDAO();
+    MacrosDAO macrosDAO = new MacrosDAO();
+    Usuarios usuario = new Usuarios();
+    PerfilesDAO perfilesDAO = new PerfilesDAO();
+    List<Actividadm> actividades = actividadDAO.seleccionar();
+    List<Objetivos> objetivos = objetivosDAO.seleccionar();
+    List<Macros> macros = macrosDAO.seleccionar();
+    
+    protected void sendPath(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        
+        HttpSession session = request.getSession();
+        
+        request.getSession().setAttribute("actividad", actividades);
+        request.getSession().setAttribute("objetivo", objetivos);
+        request.getSession().setAttribute("macros", macros);
+        switch(request.getServletPath()){
+            
+            case "/DataServlet":
+                response.sendRedirect(request.getContextPath()+"/Views/prfl.jsp");
+                break;
+            case "/prflData":
+                
+                int idperfil = Integer.parseInt(request.getParameter("idperfil"));
+                
+                System.out.println("Valor del idperfil: " + idperfil);
+                
+                PerfilesDAO perfilesDAO = new PerfilesDAO();
+                Perfiles perfil = perfilesDAO.seleccionarPefil(idperfil);
+                
+                if(perfil != null){
+                    request.getSession().setAttribute("perfil", perfil);
+                    response.sendRedirect(request.getContextPath()+"/Views/prfledit.jsp");
+                } else{
+                    response.sendRedirect(request.getContextPath()+"/Views/mainview.jsp");
+                }
+                
+                
+                break;
+        }
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        ActividadDAO actividadDAO = new ActividadDAO();
-        List<Actividadm> actividades = actividadDAO.seleccionar();
-        request.getSession().setAttribute("actividad", actividades);
-        
-        ObjetivosDAO objetivosDAO = new ObjetivosDAO();
-        List<Objetivos> objetivos = objetivosDAO.seleccionar();
-        request.getSession().setAttribute("objetivo", objetivos);
-        
-        MacrosDAO macrosDAO = new MacrosDAO();
-        List<Macros> macros = macrosDAO.seleccionar();
-        request.getSession().setAttribute("macros", macros);
-        
-        Usuarios usuario = new Usuarios();
-        PerfilesDAO perfilesDAO = new PerfilesDAO();
-        List<Perfiles> perfiles = perfilesDAO.seleccionar(usuario.getIdusuario());
-        request.getSession().setAttribute("perfil", perfiles);
-        
-        response.sendRedirect(request.getContextPath()+"/Views/prfl.jsp");
-       
+        sendPath(request, response);
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         processRequest(request, response);
+         sendPath(request, response);
     }
     @Override
     public String getServletInfo() {

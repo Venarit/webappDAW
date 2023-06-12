@@ -37,12 +37,31 @@ public class Perfiles implements Serializable{
         this.calorias = calorias;
     }
     
-    //MODIFICAR
-    public Perfiles(int idperfil, int r_usuario, int peso, int altura, String sexo, 
+    
+    public Perfiles(int idperfil, int r_usuario, double peso, int altura, String sexo, 
             int edad, int bmr, int tdee, int r_actividad, int r_objetivo, 
             int r_macros, String nombreperfil, int calorias){
         this.idperfil = idperfil;
         this.r_usuario = r_usuario;
+        this.peso = peso;
+        this.altura = altura;
+        this.sexo = sexo;
+        this.edad = edad;
+        this.bmr = bmr;
+        this.tdee = tdee;
+        this.r_actividad = r_actividad;
+        this.r_objetivo = r_objetivo;
+        this.r_macros = r_macros;
+        this.nombreperfil = nombreperfil;
+        this.calorias = calorias;
+    }
+    
+    
+    //MODIFICAR
+    public Perfiles(int idperfil, double peso, int altura, String sexo, 
+            int edad, int bmr, int tdee, int r_actividad, int r_objetivo, 
+            int r_macros, String nombreperfil, int calorias){
+        this.idperfil = idperfil;
         this.peso = peso;
         this.altura = altura;
         this.sexo = sexo;

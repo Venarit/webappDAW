@@ -1,8 +1,9 @@
-<%@page import="Modelos.Objetivos"%>
-<%@page import="java.util.List"%>
-<%@page import="Modelos.Perfiles"%>
+
 <%@page import="Modelos.Macros"%>
+<%@page import="Modelos.Objetivos"%>
 <%@page import="Modelos.Actividadm"%>
+<%@page import="Modelos.Perfiles"%>
+<%@page import="java.util.List"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,13 +24,11 @@
         if (session == null || session.getAttribute("nombre") == null) {
             response.sendRedirect("../index.html");
         } else{ 
-        List<Perfiles> perfiles = (List<Perfiles>) session.getAttribute("perfil");
-        
-        if (perfiles == null || perfiles.isEmpty()) {
-            response.sendRedirect("../index.html");
-        } else { 
             Perfiles perfil = (Perfiles) request.getSession().getAttribute("perfil");
-            if(perfil!=null){
+            if (perfil == null) {
+                response.sendRedirect("/Views/mainview.jsp");
+            } else{
+            
                 String nombre = perfil.getNombreperfil();
                 double peso = perfil.getPeso();
                 int altura = perfil.getAltura();
@@ -39,15 +38,22 @@
                 int objetivo = perfil.getR_objetivo();
                 int macros = perfil.getR_macros();
         %> 
+        <img class="back" src="../assests/img/previous.png"  onclick="history.back()" alt="prev"/>
+        
+        
+        <div class="contimg">
+            <img class="prflimg" src="../assests/img/editicon.jpg" alt=""/>
+        </div>
         
         <h1>Editar perfil</h1>
+        
         <div class="cont">
-            <form action="<%= request.getContextPath()%>/prflServlet"  method="post" class="prfl-form" id="prfl-form">
+            <form action="<%= request.getContextPath()%>/editPrflServlet"  method="post" class="prfl-form" id="prfl-form">
                
                 <div class="row">
                     <div class="col-50">
                         <label for="nombreperfil">Nombre del Perfil:</label>
-                        <input type="text" value="<%= nombre %>" name="nombreperfil" id="nombreperfil" required>
+                        <input type="text" maxlength="45" value="<%= nombre %>" name="nombreperfil" id="nombreperfil" required>
 
                         <label for="peso">Peso (kg):</label>
                         <input type="text" value="<%= peso %>" name="peso" required>
@@ -96,16 +102,15 @@
                     </div>
                     
                 </div>
-                
-                
-                <button type="submit" class="modprflbtn" value="modprfl">Guardar cambios</button>
+            
+                    <button type="submit" class="modprflbtn" value="modprfl" >Guardar cambios</button>
+                    
                 <%}%>
                 
-                
             </form>
-            
+                
         </div>
-        <%}%>
+                <button class="borrarbtn" value="borrar" onclick="openModal('modal4')">Borrar perfil</button>
         
         <% List<Actividadm> listaact = (List<Actividadm>) request.getSession().getAttribute("actividad"); %>
         <% List<Objetivos> listaobj = (List<Objetivos>) request.getSession().getAttribute("objetivo"); %>
@@ -182,6 +187,14 @@
                         }%>
                     </tbody>
                 </table>
+            </div>
+        </div>
+                    
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+                <h3>¿Estás seguro?</h3>
+                <button class="yesbtn" value="confirmar">Borrar</button>
             </div>
         </div>
                     

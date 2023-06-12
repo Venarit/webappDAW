@@ -3,12 +3,11 @@
     Created on : 10 jun 2023, 12:41:17
     Author     : Naomi
 --%>
-<%@page import="Modelos.Objetivos"%>
-<%@page import="java.util.List"%>
-<%@page import="Modelos.Perfiles"%>
-<%@page import="Modelos.Macros"%>
-<%@page import="Modelos.Actividadm"%>
 
+<%@page import="Modelos.Macros"%>
+<%@page import="Modelos.Objetivos"%>
+<%@page import="Modelos.Actividadm"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,20 +22,29 @@
         <link href="../assests/css/styleprfl.css" rel="stylesheet" type="text/css"/>
         <script src="https://kit.fontawesome.com/773b0b6249.js" crossorigin="anonymous"></script>
     </head>
+    
     <body>
         <%
         if (session == null || session.getAttribute("nombre") == null) {
             response.sendRedirect("../index.html");
         } else{ 
         %> 
+        <img class="back" src="../assests/img/previous.png"  onclick="history.back()" alt="prev"/>
+        
+        <div class="contimg">
+            <img class="prflimg" src="../assests/img/add-friend.png" alt=""/>
+        </div>
         
         <h1>Crear perfil</h1>
         <div clas="cont">
+            
             <form action="<%= request.getContextPath()%>/prflServlet"  method="post" class="prfl-form" id="prfl-form">
+                
                 <div class="row">
+                    
                     <div class="col-50">
                         <label for="nombreperfil">Nombre del Perfil:</label>
-                        <input type="text" placeholder="Ingrese el nombre del perfil" name="nombreperfil" id="nombreperfil" required>
+                        <input type="text" maxlength="45" placeholder="Ingrese el nombre del perfil" name="nombreperfil" id="nombreperfil" required>
 
                         <label for="peso">Peso (kg):</label>
                         <input type="text" placeholder="Ingrese el peso en kilogramos" name="peso" required>
@@ -45,6 +53,7 @@
                         <input type="number" placeholder="Ingrese la altura en centimetros" name="altura" min="1" max="300" required>
 
                         <label for="edad">Edad:</label>
+                        <a href="../../java/Modelos/Perfiles.java"></a>
                         <input type="number" placeholder="Ingrese la edad" name="edad" min="18" max="80"  required>
                     </div>
                     

@@ -9,6 +9,7 @@ import java.util.*;
  */
 public class PerfilesDAO {
     public static final String selectSQL = "SELECT * FROM perfilnutricional WHERE r_usuario = ";
+    public static final String selectperfilSQL = "SELECT * FROM perfilnutricional WHERE idperfil = ";
     public static final String insertSQL = "INSERT INTO perfilnutricional(peso, altura, sexo, edad, bmr, tdee, r_actividad, r_objetivo, r_macros, nombreperfil, r_usuario, calorias) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
     public static final  String updateSQL = "UPDATE perfilnutricional SET peso = ?, altura = ?, sexo = ?, edad = ?, bmr = ?, tdee = ?, r_actividad = ?, r_objetivo = ?, r_macros = ?, nombreperfil = ?, calorias = ?, WHERE idperfil = ? ";
     public static final String deleteSQL = "DELETE FROM perfilnutricional WHERE idperfil = ? ";
@@ -70,6 +71,46 @@ public class PerfilesDAO {
         return perfiles;
     }
     
+    
+    public Perfiles seleccionarPefil(int idperfil){
+        Connection conn = null;
+        Statement state = null;
+        ResultSet result = null;
+        Perfiles prfl = null;
+        
+        try{
+            conn = Conexion.getConnection();
+            state = conn.createStatement();
+            result = state.executeQuery(selectperfilSQL + idperfil);
+            
+            if(result.next()){
+                double peso = result.getDouble("peso");
+                int altura = result.getInt("altura");
+                String sexo = result.getString("sexo");
+                int edad = result.getInt("edad");
+                int bmr = result.getInt("bmr");
+                int tdee = result.getInt("tdee");
+                int r_actividad = result.getInt("r_actividad");
+                int r_objetivo = result.getInt("r_objetivo");
+                int r_macros = result.getInt("r_macros");
+                String nombreperfil = result.getString("nombreperfil");
+                int calorias = result.getInt("calorias");
+                
+                prfl = new Perfiles(idperfil, peso, altura, sexo, edad, bmr, tdee, r_actividad, r_objetivo, r_macros, nombreperfil, calorias);
+
+            }
+            
+        } catch(SQLException e){
+            e.printStackTrace();
+        } finally {
+            Conexion.close(state);
+            Conexion.close(conn);
+            Conexion.close(result);
+        }
+        
+        return prfl;
+    }
+    
     public int agregar(Perfiles perfil){
         Connection conn = null;
         PreparedStatement state = null;
@@ -107,6 +148,8 @@ public class PerfilesDAO {
         }
         return registros;
     }
+    
+    
     
     public int modificar(Perfiles perfil){
         Connection conn = null;
