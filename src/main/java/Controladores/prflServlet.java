@@ -8,10 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Datos.UsuariosDAO;
-import Modelos.Usuarios;
+import Datos.ActividadDAO;
+import Datos.ObjetivosDAO;
 import Datos.PerfilesDAO;
 import Modelos.Perfiles;
+import java.util.List;
 import javax.servlet.http.HttpSession;
 /**
  *
@@ -37,11 +38,35 @@ public class prflServlet extends HttpServlet {
         int r_objetivo = Integer.parseInt(request.getParameter("r_objetivo"));
         int r_macros = Integer.parseInt(request.getParameter("r_macros"));
         
-        Perfiles perfil = new Perfiles(r_usuario, altura, edad, r_actividad, r_objetivo, r_macros, peso, nombreperfil, sexo);
+        int bmr;
+        if(sexo=="Masculino"){
+            bmr = (int) ((10*peso)+(6.25*altura)-(5*edad)+5);
+        } else {
+            bmr = (int) ((10*peso)+(6.25*altura)-(5*edad)-161);
+        }
+        
+        int tdee;
+        ActividadDAO actividadDAO = new ActividadDAO();
+        double factorAct = actividadDAO.seleccionarFactor(r_actividad);
+        
+        tdee = (int)((bmr)*(factorAct));
+        
+        ObjetivosDAO objetivosDAO = new ObjetivosDAO();
+        int objcalorias = objetivosDAO.seleccionarCalorias(r_objetivo);
+        int calorias = (tdee+objcalorias);
+        
+        
+        Perfiles perfil = new Perfiles(r_usuario, altura, edad, bmr, tdee, r_actividad, r_objetivo, r_macros, peso, nombreperfil, sexo, calorias);
         PerfilesDAO prflDAO = new PerfilesDAO();
         int registros = prflDAO.agregar(perfil);
         
+        
         if (registros > 0) {
+            int idusuario = (int) session.getAttribute("idusuario");
+            PerfilesDAO perfilesDAO = new PerfilesDAO();
+            List<Perfiles> perfiles = perfilesDAO.seleccionar(idusuario);
+            request.getSession().setAttribute("perfil", perfiles);
+            
             System.out.println("Perfil añadido correctamente");
             response.sendRedirect("Views/mainview.jsp");
         } else {

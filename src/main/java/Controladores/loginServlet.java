@@ -51,7 +51,7 @@ public class loginServlet extends HttpServlet {
         if (loginExitoso) {
             PerfilesDAO perfilesDAO = new PerfilesDAO();
             List<Perfiles> perfiles = perfilesDAO.seleccionar(usuario.getIdusuario());
-            request.getSession().setAttribute("perfiles", perfiles);
+            request.getSession().setAttribute("perfil", perfiles);
             
             session.setAttribute("idusuario", usuario.getIdusuario());
             session.setAttribute("nombre", usuario.getNombre());

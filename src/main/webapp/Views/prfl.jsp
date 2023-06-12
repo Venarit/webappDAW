@@ -30,6 +30,12 @@
         } else{ 
         %> 
         
+        <%
+        String mensaje = request.getParameter("mensaje");
+        if (mensaje != null && !mensaje.isEmpty()) {%>
+            <div class="mensaje"><%= mensaje %></div>
+        <%}%>
+        
         <h1>Crear perfil</h1>
         <div clas="cont">
             <form action="<%= request.getContextPath()%>/prflServlet"  method="post" class="prfl-form" id="prfl-form">
@@ -101,7 +107,7 @@
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal1')">&times;</span>
-                <p>Modal 1</p>
+                
                 <table>
                     <thead>
                         <tr>
@@ -126,7 +132,7 @@
         <div id="modal2" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal2')">&times;</span>
-                <p>Modal 2</p>
+                
                 <table>
                     <thead>
                         <tr>
@@ -151,7 +157,7 @@
         <div id="modal3" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal3')">&times;</span>
-                <p>Modal 3</p>
+                
                 <table>
                     <thead>
                         <tr>

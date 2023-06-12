@@ -9,6 +9,7 @@ import java.util.*;
 public class ObjetivosDAO {
     
     public static final String selectSQL = "SELECT * FROM objetivo";
+    public static final String selectCalorias = "SELECT calorias FROM objetivo WHERE idobjetivo = ?";
     
     public List<Objetivos> seleccionar(){
         Connection conn = null;
@@ -49,4 +50,31 @@ public class ObjetivosDAO {
         return objetivos;
         
     }
+    
+    public int seleccionarCalorias(int idobjetivo){
+        Connection conn = null;
+        PreparedStatement state = null;
+        ResultSet result = null;
+        Objetivos act = null;
+        
+        int calorias = 0;
+        try{
+            conn = Conexion.getConnection();
+            state = conn.prepareStatement(selectCalorias);
+            state.setInt(1, idobjetivo);
+            result = state.executeQuery();
+            
+            if (result.next()) {
+                calorias = result.getInt("calorias");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Conexion.close(result);
+            Conexion.close(state);
+            Conexion.close(conn);
+        }
+        return calorias;
+    }
+    
 }

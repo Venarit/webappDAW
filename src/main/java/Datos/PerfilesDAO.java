@@ -38,8 +38,9 @@ public class PerfilesDAO {
                 int r_objetivo = result.getInt("r_objetivo");
                 int r_macros = result.getInt("r_macros");
                 String nombreperfil = result.getString("nombreperfil");
+                int calorias = result.getInt("calorias");
                 
-                prfl = new Perfiles(idperfil, r_usuario, peso, altura, sexo, edad, bmr, tdee, r_actividad, r_objetivo, r_macros, nombreperfil);
+                prfl = new Perfiles(idperfil, r_usuario, peso, altura, sexo, edad, bmr, tdee, r_actividad, r_objetivo, r_macros, nombreperfil, calorias);
                 perfiles.add(prfl);
             }
             
@@ -59,6 +60,7 @@ public class PerfilesDAO {
                 System.out.println("R_Actividad: "+ perfil.getR_actividad());
                 System.out.println("R_Objetivo: "+ perfil.getR_objetivo());
                 System.out.println("R_Macros: "+ perfil.getR_macros());
+                System.out.println("Calorias: "+ perfil.getCalorias());
                 System.out.println(" \n ");
             }
             
@@ -90,6 +92,7 @@ public class PerfilesDAO {
             state.setInt(9, perfil.getR_macros());
             state.setString(10, perfil.getNombreperfil());
             state.setInt(11, perfil.getR_usuario());
+            state.setInt(12, perfil.getCalorias());
             
             registros = state.executeUpdate();
             
@@ -124,6 +127,7 @@ public class PerfilesDAO {
             state.setInt(8, perfil.getR_objetivo());
             state.setInt(9, perfil.getR_macros());
             state.setString(10, perfil.getNombreperfil());
+            state.setInt(11, perfil.getCalorias());
             
             registros = state.executeUpdate();
             

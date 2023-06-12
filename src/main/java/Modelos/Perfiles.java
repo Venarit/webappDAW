@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author Naomi
  */
 public class Perfiles implements Serializable{
-    private int r_usuario, idperfil, altura, edad, bmr, tdee, r_actividad, r_objetivo, r_macros;
+    private int r_usuario, idperfil, altura, edad, bmr, tdee, r_actividad, r_objetivo, r_macros, calorias;
     private double peso;
     private String nombreperfil, sexo;
     
@@ -20,24 +20,27 @@ public class Perfiles implements Serializable{
     }
     
     //INSERTAR
-    public Perfiles(int r_usuario, int altura, int edad, int r_actividad, 
-            int r_objetivo, int r_macros, double peso, String nombreperfil, String sexo){
+    public Perfiles(int r_usuario, int altura, int edad, int bmr, int tdee, int r_actividad, 
+            int r_objetivo, int r_macros, double peso, String nombreperfil, String sexo, int calorias){
         
         this.r_usuario = r_usuario;
         this.altura = altura;
         this.edad = edad;
+        this.bmr = bmr;
+        this.tdee = tdee;
         this.r_actividad = r_actividad;
         this.r_objetivo = r_objetivo;
         this.r_macros = r_macros;
         this.peso = peso;
         this.nombreperfil = nombreperfil;
         this.sexo = sexo;
+        this.calorias = calorias;
     }
     
     //MODIFICAR
     public Perfiles(int idperfil, int r_usuario, int peso, int altura, String sexo, 
             int edad, int bmr, int tdee, int r_actividad, int r_objetivo, 
-            int r_macros, String nombreperfil){
+            int r_macros, String nombreperfil, int calorias){
         this.idperfil = idperfil;
         this.r_usuario = r_usuario;
         this.peso = peso;
@@ -50,6 +53,7 @@ public class Perfiles implements Serializable{
         this.r_objetivo = r_objetivo;
         this.r_macros = r_macros;
         this.nombreperfil = nombreperfil;
+        this.calorias = calorias;
     }
 
     
@@ -89,13 +93,16 @@ public class Perfiles implements Serializable{
     public String getSexo(){return sexo;}
     public void setSexo(String sexo){this.sexo = sexo;}
     
+    public int getCalorias(){return calorias;}
+    public void setCalorias(int calorias){this.calorias = calorias;}
+    
     @Override
     public String toString(){
         return "perfiles{" + "idperfil= " + idperfil + ", r_usuario" + r_usuario +
                 "nombreperfil= " + nombreperfil + ", sexo= " + sexo + ", peso= " + peso +
                 ", altura= " + altura + ", edad= " + edad + ", bmr= " + bmr + ", tdee= " +
                 tdee + ", r_actividad= " + r_actividad + ", r_objetivo= " + r_objetivo +
-                ", r_macros= " + r_macros + '}';
+                ", r_macros= " + r_macros + " calorias= " + calorias + '}';
     }
 }
 

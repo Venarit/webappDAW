@@ -19,7 +19,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Syncopate&display=swap" rel="stylesheet">
-        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;1,100&family=Poppins:ital,wght@0,100;0,200;1,100&family=Syncopate&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/773b0b6249.js" crossorigin="anonymous"></script>
         <link href="../assests/css/stylemain.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -31,21 +33,47 @@
         <%{%>
         
             <div class="sidenav" id="sidenavContent">
-                <img src="../assests/avatars/man.png" alt="Avatar" class="avatar"/>
-                <h3>Bienvenid@ <%= session.getAttribute("nombre") %> ID: <%= session.getAttribute("idusuario") %> </h3>
+                <div class="topsidenav">
+                    <i class="fa-solid fa-right-from-bracket fa-2x" onclick="location.href='<%= request.getContextPath()%>/logout'"></i>
+                    <img src="../assests/avatars/man.png" alt="Avatar" class="avatar"/>
+                    <h2>Bienvenid@ <%= session.getAttribute("nombre") %></h2>
+                </div>
+                <div class="bottomsidenav">
+                    
                 <% 
-                    List<Perfiles> perfiles = (List<Perfiles>) session.getAttribute("perfiles");
+                    List<Perfiles> perfiles = (List<Perfiles>) session.getAttribute("perfil");
 
                     if (perfiles == null || perfiles.isEmpty()) {
                     %>
-                    <h3>Todavía no tienes ningún perfil. Crea uno.</h3>
+                    <h3>Todavía no tienes ningún perfil. Crea uno.<h3>
                     <% } else { %>
                     <h3>Perfiles:</h3>
-                    
-                <% } %>
+                    <div class="perfilescont">
+                        <%if(perfiles != null) {
+                            for (Perfiles perfil : perfiles) { %>
+                            
+                                <button class="perfilcont"><%= perfil.getNombreperfil() %></button>
+                                <div class="prflpanel">
+                                    <div class="col-50">
+                                        <p>Sexo: <%= perfil.getSexo() %></p>
+                                        <p>Edad: <%= perfil.getEdad() %></p>
+                                        <button class="editar">Editar</button>
+                                    </div>
+                                    <div class="col-50">
+                                        <p>Altura: <%= perfil.getAltura()%> cm</p>
+                                        <p>Peso: <%= perfil.getPeso() %> kg</p>
+                                        <button class="seleccionar">Seleccionar</button>
+                                    </div>
+                                        
+                                </div>
+                                
+                            <%} 
+                        }%>
+                    </div>  
+                    <%}%>
                 
-                <button onclick="location.href='<%= request.getContextPath()%>/DataServlet'">Crear perfil</button>
-                
+                <button class="crearprflbtn" onclick="location.href='<%= request.getContextPath()%>/DataServlet'">Crear perfil</button>
+                </div>   
             </div>
 
             <div class="main">
@@ -54,7 +82,8 @@
                     <button class="pestaña" onclick="openPage(event, 'op2')">Opcion2</button>
                     <button class="pestaña" onclick="openPage(event, 'op3')">Opcion3</button>
                     <button class="pestaña" onclick="openPage(event, 'op4')">Opcion4</button>
-                    <button onclick="location.href='<%= request.getContextPath()%>/logout'">CERRAR SESION</button>
+                    
+                   
                 </div>
                 
                 <div id="op1" class="pestañacont">
@@ -95,6 +124,22 @@
                 }
                 document.getElementById(opcion).style.display = "block";
                 evento.currentTarget.className += " active";
+            }
+            
+            var prflcont = document.getElementsByClassName("perfilcont");
+            var i;
+
+            for (i = 0; i < prflcont.length; i++) {
+              prflcont[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+
+                var prflpanel = this.nextElementSibling;
+                if (prflpanel.style.display === "block") {
+                  prflpanel.style.display = "none";
+                } else {
+                  prflpanel.style.display = "block";
+                }
+              });
             }
             
         </script>
