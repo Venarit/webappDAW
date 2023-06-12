@@ -39,6 +39,7 @@ public class editPrflServlet extends HttpServlet {
         HttpSession session = request.getSession();
         int idperfil = (int) session.getAttribute("idperfil");
         
+        
         String nombreperfil = request.getParameter("nombreperfil");
         String sexo = request.getParameter("sexo");
         double peso = Double.parseDouble(request.getParameter("peso"));
@@ -49,7 +50,7 @@ public class editPrflServlet extends HttpServlet {
         int r_macros = Integer.parseInt(request.getParameter("r_macros"));
         
         int bmr;
-        if(sexo=="Masculino"){
+        if(sexo.equals("Masculino")){
             bmr = (int) ((10*peso)+(6.25*altura)-(5*edad)+5);
         } else {
             bmr = (int) ((10*peso)+(6.25*altura)-(5*edad)-161);

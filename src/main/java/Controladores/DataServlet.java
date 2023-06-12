@@ -60,6 +60,7 @@ public class DataServlet extends HttpServlet {
                 Perfiles perfil = perfilesDAO.seleccionarPefil(idperfil);
                 
                 if(perfil != null){
+                    session.setAttribute("idperfil", perfil.getIdperfil());
                     request.getSession().setAttribute("perfil", perfil);
                     response.sendRedirect(request.getContextPath()+"/Views/prfledit.jsp");
                 } else{
