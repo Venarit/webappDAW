@@ -1,0 +1,222 @@
+body{
+    min-height: 100vh;
+     overflow: hidden;
+}
+
+i{
+    opacity: 0.9;
+    top: 10px;
+    left: 10px;
+    position: fixed;
+    color: white;
+    cursor: pointer;
+}
+
+.containerpestaña{
+    overflow: hidden;
+    border: 0px solid #ccc;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+}
+
+.containerpestaña button {
+    display: flex;
+    justify-content: center;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.containerpestaña button:hover {
+  background-color: #ddd;
+}
+
+.containerpestaña button.active {
+  background-color: #ccc;
+}
+
+
+.pestañacont{
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+
+
+.sidenav{
+    height: 100%;
+    width: 400px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    background-color: #212121;
+    top: 0; 
+    left: 0;
+}
+
+.topsidenav{
+    height: 25%;
+    width: 400px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    background-color: #033f63;
+}
+.bottomsidenav{
+    height: 100%;
+    width: 400px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 25%; 
+    left: 0;
+    background-color: #212121;
+   
+}
+
+.crearprflbtn{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 0px;
+}
+
+.sidenav form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    margin-top: 30px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+input{
+    opacity: 0.8;
+    width: 70%;
+    padding: 15px;
+    margin-top: 30px;
+    display: inline-block;
+    font-size: 100%;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+.crearprflbtn{
+    width: 400px;
+    opacity: 0.8;
+    background-color: #376289;
+    border-color: black;
+    font-size: 100%;
+    color: white;
+    margin-top: 30px;
+    padding: 15px;
+    bottom: 0;
+}
+
+h2, h3{
+    font-family: 'Poppins', sans-serif;
+}
+h2{
+    color: #e6edfc ;
+    font-size: 25px;
+}
+h3{
+    color: #8C8C8C ;
+    font-size: 15px;
+}
+p{
+    font-family: 'Jost', sans-serif;
+    color: black ;
+    font-size: 15px;
+}
+
+.main{
+    height: 100%;
+    width: 100%;
+    margin-left:400px;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    
+}
+
+.perfilescont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfilcont{
+    font-size: 18px;
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    background-color: #212121;
+    color: white;
+    cursor: pointer;
+    height: 50px;
+    width: 300px;
+    transition: 0.4s;
+    outline: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    
+}
+
+.perfilcont.active {
+  background-color: #ccc;
+}
+
+.active .perfilcont:hover{
+    background-color: #ccc;
+}
+
+.prflpanel {
+    display: flex;
+    flex-direction: row;
+    
+    opacity: 0.8;
+    width: 260px;
+    padding: 0 18px;
+    background-color: #efefef;
+    color: black;
+    display: none;
+    overflow: hidden;
+    
+    column-count: 2;
+    column-gap: 5px;
+    
+}
+
+.prflpanel button{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.col-50 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    
+}
+

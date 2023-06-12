@@ -1,0 +1,85 @@
+
+body{
+    
+}
+
+h1{
+    color: #8C8C8C ;	
+    font-family: 'Syncopate', sans-serif;
+    text-align:center;
+    font-size: 500%;
+    font-weight: 10;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+p{
+    color: #60BCD3;	
+    font-family: monospace;
+    text-align:center;
+    margin-bottom: 70px;
+    font-size: 200%;
+}
+
+.prevbtn{
+    background-color: transparent;
+    border-color: transparent;
+    
+}
+
+img{
+    width: 35px;
+    height: 35px;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 550px;
+    margin: auto;
+    border-radius: 45px;
+    background: linear-gradient(145deg, #e5e5e5, #c1c1c1);
+    box-shadow:  33px 33px 0px #bcbcbc,
+             -33px -33px 0px #f0f0f0;
+    margin-bottom: 25px;
+}
+
+.container form{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    font-family: monospace;
+    font-size: 120%;
+    opacity: 0.8;
+    width: 70%;
+    padding: 15px;
+    margin: 10px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 40px;
+    background: #ffffff;
+    box-shadow: inset 7px 7px 14px #b0b0b0,
+                inset -7px -7px 14px #ffffff;
+}
+
+.registrobtn{
+    font-family: monospace;
+    opacity: 0.8;
+    font-size: 120%;
+    margin-top: 5px;
+    padding: 15px;
+    width: 75%;
+    margin-top: 25px;
+    border-radius: 40px;
+    border-color: #92cedd;
+    background: #92cedd;
+}
