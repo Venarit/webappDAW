@@ -40,11 +40,12 @@
                     %>
                     <h3>Todavía no tienes ningún perfil. Crea uno.</h3>
                     <% } else { %>
-                    <!-- Aquí puedes mostrar los perfiles existentes -->
+                    <h3>Perfiles:</h3>
+                    
                 <% } %>
                 
-                <button onclick="location.href='prfl.jsp'">Crear perfil</button>
-
+                <button onclick="location.href='<%= request.getContextPath()%>/DataServlet'">Crear perfil</button>
+                
             </div>
 
             <div class="main">
@@ -53,6 +54,7 @@
                     <button class="pestaña" onclick="openPage(event, 'op2')">Opcion2</button>
                     <button class="pestaña" onclick="openPage(event, 'op3')">Opcion3</button>
                     <button class="pestaña" onclick="openPage(event, 'op4')">Opcion4</button>
+                    <button onclick="location.href='<%= request.getContextPath()%>/logout'">CERRAR SESION</button>
                 </div>
                 
                 <div id="op1" class="pestañacont">

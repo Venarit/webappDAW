@@ -8,12 +8,12 @@ import java.util.*;
  * @author Naomi
  */
 public class PerfilesDAO {
-    public static final String selectSQL = "SELECT * FROM perfilnutricional";
+    public static final String selectSQL = "SELECT * FROM perfilnutricional WHERE r_usuario = ";
     public static final String insertSQL = "INSERT INTO perfilnutricional(peso, altura, sexo, edad, bmr, tdee, r_actividad, r_objetivo, r_macros, nombreperfil, r_usuario) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
     public static final  String updateSQL = "UPDATE perfilnutricional SET peso = ?, altura = ?, sexo = ?, edad = ?, bmr = ?, tdee = ?, r_actividad = ?, r_objetivo = ?, r_macros = ?, nombreperfil = ? WHERE idperfil = ? ";
     public static final String deleteSQL = "DELETE FROM perfilnutricional WHERE idperfil = ? ";
     
-    public List<Perfiles> seleccionar(){
+    public List<Perfiles> seleccionar(int r_usuario){
         Connection conn = null;
         Statement state = null;
         ResultSet result = null;
@@ -23,11 +23,11 @@ public class PerfilesDAO {
         try{
             conn = Conexion.getConnection();
             state = conn.createStatement();
-            result = state.executeQuery(selectSQL);
+            
+            result = state.executeQuery(selectSQL + r_usuario);
             
             while(result.next()){
                 int idperfil = result.getInt("idperfil");
-                int r_usuario = result.getInt("r_usuario");
                 int peso = result.getInt("peso");
                 int altura = result.getInt("altura");
                 String sexo = result.getString("sexo");
@@ -50,7 +50,6 @@ public class PerfilesDAO {
             for(Perfiles perfil: perfiles){
                 System.out.println("Id Perfil: "+ perfil.getIdperfil());
                 System.out.println("Nombre Perfil: "+ perfil.getNombreperfil());
-                System.out.println("R_Usuario: "+ perfil.getR_usuario());
                 System.out.println("Peso: "+ perfil.getPeso());
                 System.out.println("Altura: "+ perfil.getAltura());
                 System.out.println("Sexo: "+ perfil.getSexo());

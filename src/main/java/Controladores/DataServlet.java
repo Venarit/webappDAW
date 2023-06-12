@@ -14,6 +14,7 @@ import Datos.ObjetivosDAO;
 import Modelos.Actividadm;
 import Modelos.Macros;
 import Modelos.Objetivos;
+import static java.lang.System.out;
 import java.util.List;
 
 /**
@@ -31,19 +32,20 @@ public class DataServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         ActividadDAO actividadDAO = new ActividadDAO();
         List<Actividadm> actividades = actividadDAO.seleccionar();
         request.getSession().setAttribute("actividad", actividades);
         
         ObjetivosDAO objetivosDAO = new ObjetivosDAO();
         List<Objetivos> objetivos = objetivosDAO.seleccionar();
-        request.setAttribute("objetivo", objetivos);
+        request.getSession().setAttribute("objetivo", objetivos);
         
         MacrosDAO macrosDAO = new MacrosDAO();
         List<Macros> macros = macrosDAO.seleccionar();
-        request.setAttribute("macros", macros);
+        request.getSession().setAttribute("macros", macros);
         
-        request.getRequestDispatcher("/Views/prfl.jsp").forward(request, response);
+        response.sendRedirect(request.getContextPath()+"/Views/prfl.jsp");
        
     }
     @Override

@@ -95,9 +95,9 @@
             
         </div>
         
-        <% List<Actividadm> listaact = (List<Actividadm>) request.getAttribute("actividad"); %>
-        <% List<Objetivos> listaobj = (List<Objetivos>) request.getAttribute("objetivo"); %>
-        <% List<Macros> listamac = (List<Macros>) request.getAttribute("macros"); %>
+        <% List<Actividadm> listaact = (List<Actividadm>) request.getSession().getAttribute("actividad"); %>
+        <% List<Objetivos> listaobj = (List<Objetivos>) request.getSession().getAttribute("objetivo"); %>
+        <% List<Macros> listamac = (List<Macros>) request.getSession().getAttribute("macros"); %>
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal1')">&times;</span>
