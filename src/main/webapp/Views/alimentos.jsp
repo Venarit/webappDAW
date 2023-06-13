@@ -24,7 +24,6 @@
                 <th>Hidratos de carbono (g))</th>
             </tr>
             
-            
             <tr>
                 <td> <%  %> </td>
                 <td> <%  %> </td>

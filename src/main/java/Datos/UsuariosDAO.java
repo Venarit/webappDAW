@@ -12,8 +12,9 @@ import java.util.*;
 public class UsuariosDAO {
     
     public static final String selectSQL = "SELECT * FROM usuarios";
+    public static final String selectUsuario = "SELECT * FROM usuarios WHERE idusuario = ";
     public static final String insertSQL = "INSERT INTO usuarios(nombre, apellidop, email, password) VALUES (?,?,?,?)";
-    public static final  String updateSQL = "UPDATE usuarios SET nombre = ?, apellidop = ?, email = ?, password = ?, WHERE idusuario = ? ";
+    public static final  String updateSQL = "UPDATE usuarios SET nombre = ?, apellidop = ?, password = ?, WHERE idusuario = ? ";
     public static final String deleteSQL = "DELETE FROM usuarios WHERE idusuario = ? ";
     public static final String checkData = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
     public static final String checkEmail = "SELECT COUNT(*) FROM usuarios WHERE email = ?";
@@ -59,6 +60,36 @@ public class UsuariosDAO {
             e.printStackTrace();
         }
         return usuarios;
+    }
+    
+    public Usuarios seleccionarUsuario(int idusuario){
+        Connection conn = null;
+        Statement state = null;
+        ResultSet result = null;
+        Usuarios user = null;
+        
+        try{
+            conn = Conexion.getConnection();
+            state = conn.createStatement();
+            result = state.executeQuery(selectUsuario + idusuario);
+            
+            if(result.next()){
+                String nombre = result.getString("nombre");
+                String apellidop = result.getString("apellidop");
+                String password = result.getString("password");
+                
+                user = new Usuarios(idusuario, nombre, apellidop, password);
+            }
+            
+        } catch(SQLException e){
+            e.printStackTrace();
+        } finally {
+            Conexion.close(state);
+            Conexion.close(conn);
+            Conexion.close(result);
+        }
+        
+        return user;
     }
     
      private boolean emailExiste(String email) {
@@ -137,7 +168,6 @@ public class UsuariosDAO {
             state = conn.prepareStatement(updateSQL);
             state.setString(1,usuario.getNombre());
             state.setString(2, usuario.getApellidop());
-            state.setString(3, usuario.getEmail());
             state.setString(4, usuario.getContraseña());
             
             registros = state.executeUpdate();

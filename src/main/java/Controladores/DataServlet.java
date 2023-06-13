@@ -12,6 +12,7 @@ import Datos.ActividadDAO;
 import Datos.MacrosDAO;
 import Datos.ObjetivosDAO;
 import Datos.PerfilesDAO;
+import Datos.UsuariosDAO;
 import Modelos.Actividadm;
 import Modelos.Macros;
 import Modelos.Objetivos;
@@ -25,7 +26,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Naomi
  */
-@WebServlet(name = "DataServlet", value = {"/DataServlet", "/prflData"})
+@WebServlet(name = "DataServlet", value = {"/DataServlet", "/prflData", "/userData"})
 public class DataServlet extends HttpServlet {
     
     ActividadDAO actividadDAO = new ActividadDAO();
@@ -81,6 +82,21 @@ public class DataServlet extends HttpServlet {
                 
                 
                 break;
+                
+            case "/userData":
+               
+                int idusuario = Integer.parseInt(request.getParameter("idusuario"));
+                System.out.println("Valor del idusuario: " + idusuario);
+                
+                UsuariosDAO usuarioDAO = new UsuariosDAO();
+                Usuarios usuario = usuarioDAO.seleccionarUsuario(idusuario);
+                
+                if(usuario != null){
+                    response.sendRedirect(request.getContextPath()+"/Views/useredit.jsp");
+                } else{
+                    response.sendRedirect(request.getContextPath()+"/Views/mainview.jsp");
+                }
+                
         }
     }
     @Override

@@ -3,6 +3,7 @@
     Created on : 21 may 2023, 19:21:26
     Author     : Naomi
 --%>
+<%@page import="Modelos.Macros"%>
 <%@page import="Modelos.Usuarios"%>
 <%@page import="Modelos.Perfiles"%>
 <%@ page import="java.util.List" %>
@@ -34,7 +35,7 @@
                 <div class="topsidenav">
                     <i class="fa-solid fa-right-from-bracket fa-2x" onclick="location.href='<%= request.getContextPath()%>/logout'"></i>
                     <img src="../assests/avatars/man.png" alt="Avatar" class="avatar"/>
-                    <h2>Bienvenid@ <%= session.getAttribute("nombre") %></h2>
+                    <h2>Bienvenid@ <%= session.getAttribute("nombre") %></h2> <i class="fa-solid fa-pen fa-xl" onclick="location.href='<%= request.getContextPath()%>/userData?idusuario=<%=session.getAttribute("idusuario")%>'"></i>
                 </div>
                 <div class="bottomsidenav">
                     
@@ -82,8 +83,8 @@
                 <div class="containerpestaña">
                     <button class="pestaña" onclick="openPage(event, 'op1')">Consumo de calorias</button>
                     <button class="pestaña" onclick="openPage(event, 'op2')">Distribucion de macronutrientes</button>
-                    <button class="pestaña" onclick="openPage(event, 'op3')">Opcion3</button>
-                    <button class="pestaña" onclick="openPage(event, 'op4'); ">Opcion4</button>
+                    <button class="pestaña" onclick="openPage(event, 'op3')">Platillos</button>
+                    <button class="pestaña" onclick="openPage(event, 'op4'); ">Alimentos</button>
                     
                    
                 </div>
@@ -92,11 +93,19 @@
                     <img src="../assests/img/health.png" alt="img1" class="img1"/>
                     
                     <div class="textdiv">
+                        
                         <h1>Consumo de calorías</h1>
                         <p>
                             La cantidad de calorías que necesitamos depende de tu tasa metabólica basal(TMB), del nivel de actividad física que se tenga,
                             tus metas específicas y tu peso actual. 
-                        </p>
+                        </p><br><!-- comment -->
+                        <%if(perfiles != null) {
+                            for (Perfiles perfil : perfiles) { %>
+                            <p>Calorias diarias para perfil "<%= perfil.getNombreperfil()%>"</p>
+                            <input type="text" value="<%= perfil.getCalorias() %>" id="inputcal" name="inputcal" disabled><br>
+                        <% } 
+                        }%>
+                        
                         <h1>Tasa metabolica basal</h1>
                         <p>
                             La tasa metabólica basal es la cantidad de energía necesaria para las funciones fisiológicas de su cuerpo en reposo, como la respiración, los latidos del corazón y la actividad cerebral.
@@ -108,17 +117,41 @@
                         <h2>Mujeres:
                             TMB = (10 × peso [kg]) + (6.25 × altura [cm]) – (5 × edad [años]) – 161 
                         </h2><br>
+                        
+                        <%if(perfiles != null) {
+                            for (Perfiles perfil : perfiles) { %>
+                            <p>TMB perfil "<%= perfil.getNombreperfil()%>"</p>
+                            <input type="text" value="<%= perfil.getBmr() %>" id="inputbmr" name="inputbmr" disabled><br>
+                        <% } 
+                        }%>
+                        
                         <h1>Gasto Energético Total</h1>
                         <p>El Gasto energético total (GET) la cantidad de calorías que quema una persona a lo largo del día, en función del nivel de actividad física.
                             Se obtiene multiplicando la tasa metabólica basal por el factor de actividad.</p><br>
                         <h2>TDEE = BMR × Factor de actividad</h2><br>
+                        
+                        <%if(perfiles != null) {
+                            for (Perfiles perfil : perfiles) { %>
+                            <p>GET perfil "<%= perfil.getNombreperfil()%>"</p>
+                            <input type="text" value="<%= perfil.getTdee() %>" id="inputtdee" name="inputtdee" disabled><br><br>
+                        <% } 
+                        }%>
+                        
                     </div>
                 </div>
-                
+                <% List<Macros> listamac = (List<Macros>) request.getSession().getAttribute("macros"); %>
+                        
                 <div id="op2" class="pestañacont">
                     <div class="textdiv">
                         <h1>Balance de Macronutrientes </h1>
                         <p>Se obtienen los balances de los macronutrientes según las kcal diarias y la distribución especificada por perfil </p> <br>
+                        
+                        <%if(perfiles != null) {
+                            for (Perfiles perfil : perfiles) { %>
+                            
+                            <%if(listamac != null) {
+                                for (Macros macros : listamac) { %>
+                            <p><%= perfil.getCalorias() %> kcal/dia</p>
                         <table class="macrotable">
                             <tr>
                                 <th> Unidad </th>
@@ -128,9 +161,9 @@
                             </tr>
                             <tr>
                                 <th>kcal/dia</th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                                <th><%= macros.getHco() %></th>
+                                <th><%= macros.getProteina() %></th>
+                                <th><%= macros.getLipidos() %></th>
                             </tr>
                             <tr>
                                 <th>gramos/dia</th>
@@ -139,6 +172,11 @@
                                 <th> </th>
                             </tr>
                         </table><br><br>
+                        <%} 
+                        }%>
+                        
+                        <% } 
+                        }%>
                         <p>Los alimentos que consumes todos los días se componen de macronutrientes y micronutrientes. Los micronutrientes son las vitaminas y minerales que complementan el cuerpo para apoyar a la salud en general, mientras que los macronutrientes son los componentes de los alimentos que suministran energía al cuerpo.
                             Los tres macronutrientes, carbohidratos, proteínas y grasas, proporcionan calorías para conseguir energía durante todo el día.</p>
                         <img src="../assests/img/keto-7617639_1920.png" alt="img2" class="img2"/>
@@ -146,13 +184,13 @@
                 </div>
                 
                 <div id="op3" class="pestañacont">
-                    <h1>opcion3</h1>
-                    <p>no se que poner aqui una calculadora creo op3</p>
+                    <h1>Platillos</h1>
+                    <p>Platillos usuario</p>
                 </div>
                 
                 <div id="op4" class="pestañacont">
-                    <h1>opcion4</h1>
-                    <p>info macros</p>
+                    <h1>Alimentos</h1>
+                    <p>Sistema Mexicano de Alimentos Equivalente</p>
                 </div>
                 
             </div>

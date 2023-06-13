@@ -10,9 +10,11 @@ import java.util.*;
 public class PerfilesDAO {
     public static final String selectSQL = "SELECT * FROM perfilnutricional WHERE r_usuario = ";
     public static final String selectperfilSQL = "SELECT * FROM perfilnutricional WHERE idperfil = ";
+    public static final String selectmacroSQL = "SELECT * FROM perfilnutricional WHERE r_macros = ";
     public static final String insertSQL = "INSERT INTO perfilnutricional(peso, altura, sexo, edad, bmr, tdee, r_actividad, r_objetivo, r_macros, nombreperfil, r_usuario, calorias) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
     public static final  String updateSQL = "UPDATE perfilnutricional SET peso = ?, altura = ?, sexo = ?, edad = ?, bmr = ?, tdee = ?, r_actividad = ?, r_objetivo = ?, r_macros = ?, nombreperfil = ?, calorias = ? WHERE idperfil = ? ";
     public static final String deleteSQL = "DELETE FROM perfilnutricional WHERE idperfil = ? ";
+    
     
     public List<Perfiles> seleccionar(int r_usuario){
         Connection conn = null;

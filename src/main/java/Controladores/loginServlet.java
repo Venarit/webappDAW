@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Datos.UsuariosDAO;
+import Datos.MacrosDAO;
+import Modelos.Macros;
+
 import Modelos.Perfiles;
 import Modelos.Usuarios;
 import java.util.List;
@@ -46,15 +49,21 @@ public class loginServlet extends HttpServlet {
         usuario.setEmail(email);
         usuario.setContraseña(password);
         
+        
         boolean loginExitoso = userDAO.userLogin(usuario);
          
         if (loginExitoso) {
+            MacrosDAO macrosDAO = new MacrosDAO();
+            List<Macros> macros = macrosDAO.seleccionar();
+            request.getSession().setAttribute("macros", macros);
+            
             PerfilesDAO perfilesDAO = new PerfilesDAO();
             List<Perfiles> perfiles = perfilesDAO.seleccionar(usuario.getIdusuario());
             request.getSession().setAttribute("perfil", perfiles);
             
             session.setAttribute("idusuario", usuario.getIdusuario());
             session.setAttribute("nombre", usuario.getNombre());
+            session.setAttribute("apellidop", usuario.getApellidop());
             response.sendRedirect(request.getContextPath() +"/Views/mainview.jsp");
             
         } else {

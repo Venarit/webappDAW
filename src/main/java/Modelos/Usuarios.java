@@ -26,12 +26,18 @@ public class Usuarios implements Serializable {
         this.password = password;
     }
     
-    //MODIFICAR
     public Usuarios(int idusuario, String nombre, String apellidop, String email, String password){
         this.idusuario = idusuario;
         this.nombre = nombre;
         this.apellidop = apellidop;
         this.email = email;
+        this.password = password;
+    }
+    
+    public Usuarios(int idusuario, String nombre, String apellidop, String password){
+        this.idusuario = idusuario;
+        this.nombre = nombre;
+        this.apellidop = apellidop;
         this.password = password;
     }
     
