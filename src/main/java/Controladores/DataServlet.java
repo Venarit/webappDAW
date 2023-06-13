@@ -37,6 +37,7 @@ public class DataServlet extends HttpServlet {
     List<Objetivos> objetivos = objetivosDAO.seleccionar();
     List<Macros> macros = macrosDAO.seleccionar();
     
+    
     protected void sendPath(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -45,19 +46,30 @@ public class DataServlet extends HttpServlet {
         request.getSession().setAttribute("actividad", actividades);
         request.getSession().setAttribute("objetivo", objetivos);
         request.getSession().setAttribute("macros", macros);
+        
+        
         switch(request.getServletPath()){
             
+            
             case "/DataServlet":
+                PerfilesDAO perfilesDAO = new PerfilesDAO();
+                List<Perfiles> perfiles = perfilesDAO.seleccionar(usuario.getIdusuario());
+                request.getSession().setAttribute("perfil", perfiles);
+                
+                System.out.println("Cant de perfiles: " + perfiles.size());
+                
                 response.sendRedirect(request.getContextPath()+"/Views/prfl.jsp");
                 break;
+                
+                
             case "/prflData":
                 
                 int idperfil = Integer.parseInt(request.getParameter("idperfil"));
                 
                 System.out.println("Valor del idperfil: " + idperfil);
                 
-                PerfilesDAO perfilesDAO = new PerfilesDAO();
-                Perfiles perfil = perfilesDAO.seleccionarPefil(idperfil);
+                PerfilesDAO prflDAO = new PerfilesDAO();
+                Perfiles perfil = prflDAO.seleccionarPefil(idperfil);
                 
                 if(perfil != null){
                     session.setAttribute("idperfil", perfil.getIdperfil());

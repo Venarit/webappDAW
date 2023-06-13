@@ -33,10 +33,11 @@ public class signupServlet extends HttpServlet {
         
         if (registros > 0) {
             System.out.println("Registro añadido correctamente");
-            
+            response.sendRedirect("Views/signup.jsp");
         } else {
             PrintWriter out = response.getWriter();
             out.println("Error en el registro. Por favor, intenta nuevamente.");
+            response.sendRedirect("Views/signup.jsp");
         }
         
     }

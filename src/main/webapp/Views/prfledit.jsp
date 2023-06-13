@@ -194,7 +194,7 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal4')">&times;</span>
                 <h3>¿Estás seguro?</h3>
-                <button class="yesbtn" value="confirmar">Borrar</button>
+                <button class="yesbtn" value="confirmar" onclick="location.href='<%= request.getContextPath()%>/delete?idperfil=<%= perfil.getIdperfil() %>'">Borrar</button>
             </div>
         </div>
                     

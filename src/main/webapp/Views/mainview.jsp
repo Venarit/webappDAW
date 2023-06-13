@@ -9,7 +9,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,9 +28,8 @@
         <%
         if (session == null || session.getAttribute("nombre") == null) {
             response.sendRedirect("../index.html");
-        } else%> 
-        <%{%>
-        
+        } else {%> 
+        <div class="full">
             <div class="sidenav" id="sidenavContent">
                 <div class="topsidenav">
                     <i class="fa-solid fa-right-from-bracket fa-2x" onclick="location.href='<%= request.getContextPath()%>/logout'"></i>
@@ -71,8 +69,12 @@
                         }%>
                     </div>  
                     <%}%>
+                    <% if(perfiles.size()>=3){%>
+                        <button class="crearprflbtn">Max. perfiles alcanzados</button>
+                    <%} else{%>
+                        <button class="crearprflbtn" onclick="location.href='<%= request.getContextPath()%>/DataServlet'">Crear perfil</button>
+                     <%   }%>
                 
-                <button class="crearprflbtn" onclick="location.href='<%= request.getContextPath()%>/DataServlet'">Crear perfil</button>
                 </div>   
             </div>
 
@@ -87,10 +89,29 @@
                 </div>
                 
                 <div id="op1" class="pestañacont">
-                    <h1>opcion1</h1>
-                    <% out.print("Today is:"+java.util.Calendar.getInstance().getTime()); %>  
-                    <p>no se que poner aqui una calculadora creo</p>
-                    
+                    <h1>Consumo de calorías</h1>
+                    <p>
+                        La cantidad de calorías que necesitamos depende de tu tasa metabólica basal(TMB), del nivel de actividad física que se tenga,
+                        tus metas específicas y tu peso actual. 
+                    </p>
+                         
+                        
+                    <img src="../assests/img/health.png" alt="img1" class="img1"/>
+                   
+                    <div class="textdiv">
+                        <h1>Tasa metabolica basal</h1>
+                        <p>
+                            La tasa metabólica basal es la cantidad de energía necesaria para las funciones fisiológicas de su cuerpo en reposo, como la respiración, los latidos del corazón y la actividad cerebral.
+                            Esta cantidad de energía requerida se mide en kilocalorías. Son las necesidades calóricas del cuerpo en reposo y sin actividad adicional.
+                            Para calcularla se utiliza la ecuación de Mifflin-St Jeor, ya que de las que existen es la más utilizada por llegar a tener una estimación más cercana de la verdadera TBM.
+                        </p>
+                        <h2>Hombres:
+                            BMR = (10 × weight [kg]) + (6.25 × height [cm]) – (5 × age [years]) + 5</h2>
+                        <h2>Mujeres
+                            BMR = (10 × weight [kg]) + (6.25 × height [cm]) – (5 × age [years]) – 161 
+                        </h2>
+                        
+                    </div>
                 </div>
                 
                 <div id="op2" class="pestañacont">
@@ -108,9 +129,10 @@
                     <p>info macros</p>
                 </div>
             </div>
-            
-        <%}%>
+        </div>             
+        <%}%>    
         <script>
+            
             
             function openPage(evento, opcion){
                 var i, pestañacont, pestaña;

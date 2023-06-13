@@ -4,7 +4,7 @@ body{
 }
 
 i{
-    opacity: 0.9;
+    opacity: 0.7;
     top: 10px;
     left: 10px;
     position: fixed;
@@ -15,9 +15,10 @@ i{
 .containerpestaña{
     overflow: hidden;
     border: 0px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: #F7F7FF;
     display: flex;
     justify-content: center;
+    
 }
 
 .containerpestaña button {
@@ -47,6 +48,12 @@ i{
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    height: 100%;
+    width: auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 
@@ -57,11 +64,13 @@ i{
     display:flex;
     flex-direction: column;
     align-items: center;
-    position: fixed;
-    background-color: #212121;
+    position: absolute;
+    background-color: #F7F7FF;
     top: 0; 
     left: 0;
 }
+
+
 
 .topsidenav{
     height: 25%;
@@ -72,7 +81,7 @@ i{
     position: absolute;
     top: 0; 
     left: 0;
-    background-color: #033f63;
+    background-color: #BDD5EA;
 }
 .bottomsidenav{
     height: 100%;
@@ -83,16 +92,11 @@ i{
     position: absolute;
     top: 25%; 
     left: 0;
-    background-color: #686868;
+    background-color: #F7F7FF;
    
 }
 
-.crearprflbtn{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    margin-bottom: 0px;
-}
+
 
 .sidenav form{
     width: 400px;
@@ -123,20 +127,22 @@ input{
 .crearprflbtn{
     width: 400px;
     opacity: 0.8;
-    background-color: #376289;
-    border-color: black;
+    background-color: #BDD5EA;
+    border-color: white;
     font-size: 100%;
-    color: white;
+    color: #173753;
     margin-top: 30px;
     padding: 15px;
     bottom: 0;
+    left: 0;
+    position: fixed;
 }
 
 h2, h3{
     font-family: 'Poppins', sans-serif;
 }
 h2{
-    color: #e6edfc ;
+    color: #495867 ;
     font-size: 25px;
 }
 h3{
@@ -149,15 +155,19 @@ p{
     font-size: 15px;
 }
 
+.full{
+    height: 100vw;
+    display: flex;
+}
+
 .main{
     height: 100%;
-    width: 100%;
-    margin-left:400px;
+    flex: 1;
     position: fixed;
     background-color: white;
-    top: 0;
-    left: 0;
-    
+    margin-left: 400px;
+    width: calc(100% - 400px);
+    overflow-y: scroll;
 }
 
 .perfilescont{
@@ -170,8 +180,10 @@ p{
     font-size: 18px;
     font-family: 'Jost', sans-serif;
     text-align: center;
-    background-color: #212121;
-    color: white;
+    background-color: #CCE2A3;
+    border-color:  white;
+    border-width: 1px;
+    color: #173753;
     cursor: pointer;
     height: 50px;
     width: 300px;
@@ -183,7 +195,7 @@ p{
 }
 
 .perfilcont.active {
-  background-color: #ccc;
+  background-color: #A6D79C;
 }
 
 .active .perfilcont:hover{
@@ -197,8 +209,9 @@ p{
     opacity: 0.8;
     width: 260px;
     padding: 0 18px;
-    background-color: #efefef;
-    color: black;
+    background-color: #f0f0f0;
+    border-color: gray;
+    color: gray;
     display: none;
     overflow: hidden;
     
@@ -219,4 +232,17 @@ p{
     align-items: left;
     
 }
+
+.img1{
+    height: 300px;
+}
+.textdiv{
+    width: 80%;
+    margin: auto;
+    text-align: justify-all;
+}
+.textdiv h3{font-size: 26px;}
+.textdiv h2{font-size: 18px;}
+.textdiv p{font-size: 20px;}
+
 

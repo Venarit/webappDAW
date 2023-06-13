@@ -4,6 +4,7 @@
     Author     : Naomi
 --%>
 
+<%@page import="Modelos.Perfiles"%>
 <%@page import="Modelos.Macros"%>
 <%@page import="Modelos.Objetivos"%>
 <%@page import="Modelos.Actividadm"%>
@@ -28,6 +29,10 @@
         if (session == null || session.getAttribute("nombre") == null) {
             response.sendRedirect("../index.html");
         } else{ 
+            List<Perfiles> perfiles = (List<Perfiles>) session.getAttribute("perfil");    
+            if (perfiles.size()>=3) {
+                response.sendRedirect("/Views/mainview.jsp");
+            } else{
         %> 
         <img class="back" src="../assests/img/previous.png"  onclick="history.back()" alt="prev"/>
         
@@ -182,6 +187,7 @@
             </div>
         </div>
                     
+        <%}%>
         <%}%>
         <script>
             // Función para abrir el modal

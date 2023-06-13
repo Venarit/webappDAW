@@ -23,6 +23,7 @@ public class AlimentosDAO {
             result = state.executeQuery(selectSQL);
             
             while(result.next()){
+                
                 int idalimentos = result.getInt("idalimentos");
                 String nombre = result.getString("nombre");
                 int r_tipo = result.getInt("r_tipo");

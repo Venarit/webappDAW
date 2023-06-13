@@ -60,7 +60,7 @@ public class editPrflServlet extends HttpServlet {
         ActividadDAO actividadDAO = new ActividadDAO();
         double factorAct = actividadDAO.seleccionarFactor(r_actividad);
         
-        tdee = (int)((bmr)*(factorAct));
+        tdee = (int)(((bmr)*(1.1))*(factorAct));
         
         ObjetivosDAO objetivosDAO = new ObjetivosDAO();
         int objcalorias = objetivosDAO.seleccionarCalorias(r_objetivo);
@@ -71,6 +71,10 @@ public class editPrflServlet extends HttpServlet {
         int registros = prflDAO.modificar(perfil);
         
         if (registros > 0) {
+            int idusuario = (int) session.getAttribute("idusuario");
+            PerfilesDAO perfilesDAO = new PerfilesDAO();
+            List<Perfiles> perfiles = perfilesDAO.seleccionar(idusuario);
+            request.getSession().setAttribute("perfil", perfiles);
             
             System.out.println("Perfil añadido correctamente");
             response.sendRedirect("Views/mainview.jsp");
