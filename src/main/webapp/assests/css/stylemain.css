@@ -45,8 +45,7 @@ i{
 
 .pestañacont{
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: 0;
     border-top: none;
     height: 100%;
     width: auto;
@@ -81,7 +80,8 @@ i{
     position: absolute;
     top: 0; 
     left: 0;
-    background-color: #BDD5EA;
+    color: white;
+    background-color: #337d4b;
 }
 .bottomsidenav{
     height: 100%;
@@ -127,10 +127,10 @@ input{
 .crearprflbtn{
     width: 400px;
     opacity: 0.8;
-    background-color: #BDD5EA;
+    background-color: #337d4b;
     border-color: white;
     font-size: 100%;
-    color: #173753;
+    color: white;
     margin-top: 30px;
     padding: 15px;
     bottom: 0;
@@ -142,7 +142,7 @@ h2, h3{
     font-family: 'Poppins', sans-serif;
 }
 h2{
-    color: #495867 ;
+    color: white ;
     font-size: 25px;
 }
 h3{
@@ -236,13 +236,28 @@ p{
 .img1{
     height: 300px;
 }
+.img2{
+    opacity: 0.6;
+    height: 400px;
+}
 .textdiv{
     width: 80%;
     margin: auto;
     text-align: justify-all;
 }
 .textdiv h3{font-size: 26px;}
-.textdiv h2{font-size: 18px;}
+.textdiv h2{font-size: 18px; color: gray;}
 .textdiv p{font-size: 20px;}
 
+.macrotable{
+    font-family: 'Jost', sans-serif;
+    color: #898989;
+    font-size: 19px;
+    border-collapse: collapse;
+    width: 100%;
+}
+.macrotable td, th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
 

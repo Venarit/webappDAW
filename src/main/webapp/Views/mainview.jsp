@@ -80,8 +80,8 @@
 
             <div class="main">
                 <div class="containerpestaña">
-                    <button class="pestaña" onclick="openPage(event, 'op1')">Distribucion macros</button>
-                    <button class="pestaña" onclick="openPage(event, 'op2')">Opcion2</button>
+                    <button class="pestaña" onclick="openPage(event, 'op1')">Consumo de calorias</button>
+                    <button class="pestaña" onclick="openPage(event, 'op2')">Distribucion de macronutrientes</button>
                     <button class="pestaña" onclick="openPage(event, 'op3')">Opcion3</button>
                     <button class="pestaña" onclick="openPage(event, 'op4'); ">Opcion4</button>
                     
@@ -89,34 +89,60 @@
                 </div>
                 
                 <div id="op1" class="pestañacont">
-                    <h1>Consumo de calorías</h1>
-                    <p>
-                        La cantidad de calorías que necesitamos depende de tu tasa metabólica basal(TMB), del nivel de actividad física que se tenga,
-                        tus metas específicas y tu peso actual. 
-                    </p>
-                         
-                        
                     <img src="../assests/img/health.png" alt="img1" class="img1"/>
-                   
+                    
                     <div class="textdiv">
+                        <h1>Consumo de calorías</h1>
+                        <p>
+                            La cantidad de calorías que necesitamos depende de tu tasa metabólica basal(TMB), del nivel de actividad física que se tenga,
+                            tus metas específicas y tu peso actual. 
+                        </p>
                         <h1>Tasa metabolica basal</h1>
                         <p>
                             La tasa metabólica basal es la cantidad de energía necesaria para las funciones fisiológicas de su cuerpo en reposo, como la respiración, los latidos del corazón y la actividad cerebral.
                             Esta cantidad de energía requerida se mide en kilocalorías. Son las necesidades calóricas del cuerpo en reposo y sin actividad adicional.
                             Para calcularla se utiliza la ecuación de Mifflin-St Jeor, ya que de las que existen es la más utilizada por llegar a tener una estimación más cercana de la verdadera TBM.
-                        </p>
+                        </p><br>
                         <h2>Hombres:
-                            BMR = (10 × weight [kg]) + (6.25 × height [cm]) – (5 × age [years]) + 5</h2>
-                        <h2>Mujeres
-                            BMR = (10 × weight [kg]) + (6.25 × height [cm]) – (5 × age [years]) – 161 
-                        </h2>
-                        
+                            TMB = (10 × peso [kg]) + (6.25 × altura [cm]) – (5 × edad [sño]) + 5</h2>
+                        <h2>Mujeres:
+                            TMB = (10 × peso [kg]) + (6.25 × altura [cm]) – (5 × edad [años]) – 161 
+                        </h2><br>
+                        <h1>Gasto Energético Total</h1>
+                        <p>El Gasto energético total (GET) la cantidad de calorías que quema una persona a lo largo del día, en función del nivel de actividad física.
+                            Se obtiene multiplicando la tasa metabólica basal por el factor de actividad.</p><br>
+                        <h2>TDEE = BMR × Factor de actividad</h2><br>
                     </div>
                 </div>
                 
                 <div id="op2" class="pestañacont">
-                    <h1>opcion2</h1>
-                    <p>no se que poner aqui una calculadora creo op2</p>
+                    <div class="textdiv">
+                        <h1>Balance de Macronutrientes </h1>
+                        <p>Se obtienen los balances de los macronutrientes según las kcal diarias y la distribución especificada por perfil </p> <br>
+                        <table class="macrotable">
+                            <tr>
+                                <th> Unidad </th>
+                                <th> Carbohidratos </th>
+                                <th> Proteina </th>
+                                <th> Lipidos </th>
+                            </tr>
+                            <tr>
+                                <th>kcal/dia</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>gramos/dia</th>
+                                <th></th>
+                                <th></th>
+                                <th> </th>
+                            </tr>
+                        </table><br><br>
+                        <p>Los alimentos que consumes todos los días se componen de macronutrientes y micronutrientes. Los micronutrientes son las vitaminas y minerales que complementan el cuerpo para apoyar a la salud en general, mientras que los macronutrientes son los componentes de los alimentos que suministran energía al cuerpo.
+                            Los tres macronutrientes, carbohidratos, proteínas y grasas, proporcionan calorías para conseguir energía durante todo el día.</p>
+                        <img src="../assests/img/keto-7617639_1920.png" alt="img2" class="img2"/>
+                    </div>
                 </div>
                 
                 <div id="op3" class="pestañacont">
@@ -128,6 +154,7 @@
                     <h1>opcion4</h1>
                     <p>info macros</p>
                 </div>
+                
             </div>
         </div>             
         <%}%>    
