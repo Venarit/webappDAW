@@ -23,7 +23,7 @@
         if (session == null || session.getAttribute("nombre") == null) {
             response.sendRedirect("../index.html");
         } 
-            
+            Usuarios usuario = (Usuarios) request.getSession().getAttribute("Usuario");
         %> 
         <img src="../assests/img/previous.png" onclick="history.back()" alt="prev"/>
         
@@ -32,14 +32,14 @@
         
         <div class="container">
             <form action="<%= request.getContextPath()%>/editUser"  method="post" class="signup-form" id="signup-form" onsubmit="return validarFormulario()">
-                <input type="text" value="<%= session.getAttribute("nombre") %>" placeholder="Nombre" name="nombre"  required>
-                <input type="text" value="<%= session.getAttribute("apellidop") %>" placeholder="Apellido" name="apellidop" required>
-                <input type="password" value="<%= session.getAttribute("contraseña") %>" placeholder="Contraseña" name="password" id="password" required>
-                <input type="password" value="<%= session.getAttribute("contraseña") %>" placeholder="Repetir contraseña" name="password2" id="password2" required>
+                <input type="text" value="<%= usuario.getNombre() %>" placeholder="Nombre" name="nombre"  required>
+                <input type="text" value="<%= usuario.getApellidop() %>" placeholder="Apellido" name="apellidop" required>
+                <input type="password" value="<%= usuario.getContraseña() %>" placeholder="Contraseña" name="password" id="password" required>
+                <input type="password" value="<%= usuario.getContraseña() %>" placeholder="Repetir contraseña" name="password2" id="password2" required>
                 <button type="submit" class="registrobtn" value="signup">Editar cuenta</button>
             </form>
 
-            <button type="submit" class="borrarbtn" value="delete">Borrar cuenta</button>
+            <button type="submit" class="borrarbtn" value="delete" onclick="location.href='<%= request.getContextPath()%>/delete?idperfil=<%= usuario.getIdusuario() %>'">Borrar cuenta</button>
         </div>
                 
                 <script>

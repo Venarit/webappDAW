@@ -3,6 +3,7 @@
     Created on : 21 may 2023, 19:21:26
     Author     : Naomi
 --%>
+<%@page import="java.util.Map"%>
 <%@page import="Modelos.Macros"%>
 <%@page import="Modelos.Usuarios"%>
 <%@page import="Modelos.Perfiles"%>
@@ -139,7 +140,7 @@
                         
                     </div>
                 </div>
-                <% List<Macros> listamac = (List<Macros>) request.getSession().getAttribute("macros"); %>
+                <% Map<Integer,Macros> macrosmap = (Map<Integer,Macros>) request.getSession().getAttribute("macros"); %>
                         
                 <div id="op2" class="pestañacont">
                     <div class="textdiv">
@@ -149,9 +150,9 @@
                         <%if(perfiles != null) {
                             for (Perfiles perfil : perfiles) { %>
                             
-                            <%if(listamac != null) {
-                                for (Macros macros : listamac) { %>
-                            <p><%= perfil.getCalorias() %> kcal/dia</p>
+                            <%if(macrosmap != null) {
+                                    %>
+                            <p>Perfil "<%= perfil.getNombreperfil()%>": <%= perfil.getCalorias() %> kcal/dia</p>
                         <table class="macrotable">
                             <tr>
                                 <th> Unidad </th>
@@ -161,18 +162,18 @@
                             </tr>
                             <tr>
                                 <th>kcal/dia</th>
-                                <th><%= macros.getHco() %></th>
-                                <th><%= macros.getProteina() %></th>
-                                <th><%= macros.getLipidos() %></th>
+                                <th><%= macrosmap.get(perfil.getR_macros()).getHco() * perfil.getCalorias()  %></th>
+                                <th><%= macrosmap.get(perfil.getR_macros()).getProteina() * perfil.getCalorias() %></th>
+                                <th><%= macrosmap.get(perfil.getR_macros()).getLipidos() * perfil.getCalorias() %></th>
                             </tr>
                             <tr>
                                 <th>gramos/dia</th>
-                                <th></th>
-                                <th></th>
-                                <th> </th>
+                                <th><%= (macrosmap.get(perfil.getR_macros()).getHco() * perfil.getCalorias())/4  %></th>
+                                <th><%= (macrosmap.get(perfil.getR_macros()).getProteina() * perfil.getCalorias())/4 %></th>
+                                <th><%= (macrosmap.get(perfil.getR_macros()).getLipidos() * perfil.getCalorias())/9 %></th>
                             </tr>
                         </table><br><br>
-                        <%} 
+                        <%
                         }%>
                         
                         <% } 

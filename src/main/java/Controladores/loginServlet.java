@@ -18,7 +18,9 @@ import Modelos.Macros;
 
 import Modelos.Perfiles;
 import Modelos.Usuarios;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -53,9 +55,13 @@ public class loginServlet extends HttpServlet {
         boolean loginExitoso = userDAO.userLogin(usuario);
          
         if (loginExitoso) {
+            Map<Integer,Macros> map = new HashMap<>();
             MacrosDAO macrosDAO = new MacrosDAO();
             List<Macros> macros = macrosDAO.seleccionar();
-            request.getSession().setAttribute("macros", macros);
+            for(Macros i:macros){
+                map.put(i.getIdmacros(), i);
+            }
+            request.getSession().setAttribute("macros", map);
             
             PerfilesDAO perfilesDAO = new PerfilesDAO();
             List<Perfiles> perfiles = perfilesDAO.seleccionar(usuario.getIdusuario());

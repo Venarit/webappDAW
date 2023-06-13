@@ -39,10 +39,10 @@ public class editUserServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
         int idusuario = (int) session.getAttribute("idusuario");
-        
+        System.out.println(idusuario);
         String nombre = request.getParameter("nombre");
         String apellidop = request.getParameter("apellidop");
-        String contraseña = request.getParameter("contraseña");
+        String contraseña = request.getParameter("password");
         
         Usuarios usuario = new Usuarios(idusuario, nombre, apellidop, contraseña);
         UsuariosDAO usuarioDAO = new UsuariosDAO();

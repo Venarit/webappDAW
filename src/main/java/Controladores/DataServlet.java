@@ -90,6 +90,7 @@ public class DataServlet extends HttpServlet {
                 
                 UsuariosDAO usuarioDAO = new UsuariosDAO();
                 Usuarios usuario = usuarioDAO.seleccionarUsuario(idusuario);
+                request.getSession().setAttribute("Usuario", usuario);
                 
                 if(usuario != null){
                     response.sendRedirect(request.getContextPath()+"/Views/useredit.jsp");
