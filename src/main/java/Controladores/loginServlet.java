@@ -15,7 +15,8 @@ import javax.servlet.http.HttpSession;
 import Datos.UsuariosDAO;
 import Datos.MacrosDAO;
 import Modelos.Macros;
-
+import Modelos.Alimentos;
+import Datos.AlimentosDAO;
 import Modelos.Perfiles;
 import Modelos.Usuarios;
 import java.util.HashMap;
@@ -28,7 +29,10 @@ import java.util.Map;
  */
 @WebServlet(name = "loginServlet", urlPatterns = {"/login"})
 public class loginServlet extends HttpServlet {
-
+    
+    AlimentosDAO alimentosDAO = new AlimentosDAO();
+    List<Alimentos> alimentos = alimentosDAO.seleccionar();
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -51,6 +55,7 @@ public class loginServlet extends HttpServlet {
         usuario.setEmail(email);
         usuario.setContraseña(password);
         
+        request.getSession().setAttribute("alimentos", alimentos);
         
         boolean loginExitoso = userDAO.userLogin(usuario);
          

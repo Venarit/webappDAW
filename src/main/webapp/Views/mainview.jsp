@@ -3,6 +3,7 @@
     Created on : 21 may 2023, 19:21:26
     Author     : Naomi
 --%>
+<%@page import="Modelos.Alimentos"%>
 <%@page import="java.util.Map"%>
 <%@page import="Modelos.Macros"%>
 <%@page import="Modelos.Usuarios"%>
@@ -57,14 +58,14 @@
                                     <div class="col-50">
                                         <p>Sexo: <%= perfil.getSexo() %></p>
                                         <p>Edad: <%= perfil.getEdad() %></p>
-                                        <button class="editar" onclick="location.href='<%= request.getContextPath()%>/prflData?idperfil=<%= perfil.getIdperfil() %>'">Editar</button>
+                                        
                                     </div>
                                     <div class="col-50">
                                         <p>Altura: <%= perfil.getAltura()%> cm</p>
                                         <p>Peso: <%= perfil.getPeso() %> kg</p>
-                                        <button class="seleccionar">Seleccionar</button>
-                                    </div>
                                         
+                                    </div>
+                                    <button class="editar" onclick="location.href='<%= request.getContextPath()%>/prflData?idperfil=<%= perfil.getIdperfil() %>'">Editar</button>    
                                 </div>
                                 
                             <%} 
@@ -188,10 +189,40 @@
                     <h1>Platillos</h1>
                     <p>Platillos usuario</p>
                 </div>
-                
+                <% List<Alimentos> listaalm = (List<Alimentos>) request.getSession().getAttribute("alimentos"); %>
                 <div id="op4" class="pestañacont">
                     <h1>Alimentos</h1>
                     <p>Sistema Mexicano de Alimentos Equivalente</p>
+                    <table class="tableali">
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Nombre</th>
+                            <th>Cant sugerida</th>
+                            <th>Unidad</th>
+                            <th>Peso bruto(g)</th>
+                            <th>Peso neto(g)</th>
+                            <th>Energia(kcal)</th>
+                            <th>Proteina(g)</th>
+                            <th>Lipidos(g)</th>
+                            <th>Hidratos de carbono(g)</th>
+                        </tr>
+                        <%if(listaalm != null) {
+                        for (Alimentos alimento : listaalm) { %>
+                        <tr>
+                            <th></th>
+                            <th><%= alimento.getNombre() %></th>
+                            <th><%= alimento.getCantidad_sugerida() %></th>
+                            <th><%= alimento.getUnidad() %></th>
+                            <th><%= alimento.getPeso_bruto() %></th>
+                            <th><%= alimento.getPeso_neto() %></th>
+                            <th><%= alimento.getEnergia() %></th>
+                            <th><%= alimento.getProteina() %></th>
+                            <th><%= alimento.getLipidos() %></th>
+                            <th><%= alimento.getHco() %></th>
+                        </tr>
+                        <%} 
+                        }%>
+                    </table>
                 </div>
                 
             </div>

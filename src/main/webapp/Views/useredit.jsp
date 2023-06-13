@@ -39,7 +39,8 @@
                 <button type="submit" class="registrobtn" value="signup">Editar cuenta</button>
             </form>
 
-            <button type="submit" class="borrarbtn" value="delete" onclick="location.href='<%= request.getContextPath()%>/delete?idperfil=<%= usuario.getIdusuario() %>'">Borrar cuenta</button>
+            <button type="submit" class="borrarbtn" value="delete" onclick="location.href='<%= request.getContextPath()%>/delUserServlet?idusuario=<%= usuario.getIdusuario() %>'">Borrar cuenta</button>
+
         </div>
                 
                 <script>

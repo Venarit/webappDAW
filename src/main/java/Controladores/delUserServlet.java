@@ -29,6 +29,7 @@ public class delUserServlet extends HttpServlet {
         HttpSession session = request.getSession();
         int idusuario = Integer.parseInt(request.getParameter("idusuario"));
         
+        System.out.print(idusuario);
         Usuarios usuario = new Usuarios(idusuario);
         UsuariosDAO usuarioDAO = new UsuariosDAO();
         int registros = usuarioDAO.borrar(usuario);
