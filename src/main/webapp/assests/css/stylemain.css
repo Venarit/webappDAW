@@ -273,5 +273,12 @@ p{
 }
 
 .tableali{
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    margin: auto;
+}
+
+#searchInput{
+    width: 60%;
     margin: auto;
 }

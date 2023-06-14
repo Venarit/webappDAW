@@ -85,8 +85,7 @@
                 <div class="containerpestaña">
                     <button class="pestaña" onclick="openPage(event, 'op1')">Consumo de calorias</button>
                     <button class="pestaña" onclick="openPage(event, 'op2')">Distribucion de macronutrientes</button>
-                    <button class="pestaña" onclick="openPage(event, 'op3')">Platillos</button>
-                    <button class="pestaña" onclick="openPage(event, 'op4'); ">Alimentos</button>
+                    <button class="pestaña" onclick="openPage(event, 'op3'); ">Alimentos</button>
                     
                    
                 </div>
@@ -185,17 +184,17 @@
                     </div>
                 </div>
                 
-                <div id="op3" class="pestañacont">
-                    <h1>Platillos</h1>
-                    <p>Platillos usuario</p>
-                </div>
+               
                 <% List<Alimentos> listaalm = (List<Alimentos>) request.getSession().getAttribute("alimentos"); %>
-                <div id="op4" class="pestañacont">
+                <div id="op3" class="pestañacont">
                     <h1>Alimentos</h1>
                     <p>Sistema Mexicano de Alimentos Equivalente</p>
+                    
+                    <input type="text" id="searchInput" placeholder="Buscar alimentos...">
+                    
+                    
                     <table class="tableali">
                         <tr>
-                            <th>Tipo</th>
                             <th>Nombre</th>
                             <th>Cant sugerida</th>
                             <th>Unidad</th>
@@ -209,7 +208,6 @@
                         <%if(listaalm != null) {
                         for (Alimentos alimento : listaalm) { %>
                         <tr>
-                            <th></th>
                             <th><%= alimento.getNombre() %></th>
                             <th><%= alimento.getCantidad_sugerida() %></th>
                             <th><%= alimento.getUnidad() %></th>
@@ -261,6 +259,20 @@
               });
             }
             
+            var rows = document.getElementsByClassName("tableali")[0].rows;
+
+            document.getElementById("searchInput").addEventListener("input", function() {
+                var filter = this.value.toLowerCase();
+
+                for (var i = 1; i < rows.length; i++) {
+                    var name = rows[i].getElementsByTagName("th")[0].innerText.toLowerCase();
+                    if (name.indexOf(filter) > -1) {
+                        rows[i].style.display = "";
+                    } else {
+                        rows[i].style.display = "none";
+                    }
+                }
+            });
         </script>
        
 
