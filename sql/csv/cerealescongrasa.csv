@@ -1,0 +1,243 @@
+r_tipo,alimentos,cantidad_sugerida,unidad,peso_bruto,peso_neto,energia,proteina,lipidos,hco,fibra,acido_folico,calcio,hierro,sodio,azucar,iice_glicemico,carga_glicemica
+4,Barra Choco Krispis,1,barra,19,19,17,1,1.5,15,0.5,0,0,0,90.6,,,
+4,"Barra de fruta con Avena
+fresa",30,g,30,30,120,1.6,4.8,17.7,1.9,0,0,0,54.9,,,
+4,Barra multigrano linaza,20,g,20,20,99,1.9,4.8,12,1.4,0,0,0,36.9,,,
+4,Barra zucaritas,1,barra,21,21,90,1,2,16,0.5,0,0,0,100,,,
+4,"Barra Chewy para niños
+varios sabores",1,paquete,23,23,95,1.6,2.3,17,1.5,0,0,0,69.9,,,
+4,Barrita marinela,20,g,20,20,91,0.7,3.8,13.4,0.2,0,0,0,32.5,,,
+4,Base para pay,20,g,20,20,110,1,8,9,0,0,0,0.4,150,,,
+4,"Bigote relleno de
+chocolate",0.3,pieza,21,21,93,1.5,4.6,11.3,0.4,0,0,0,55.2,,,
+4,Bimbuñuelos,2,pieza,30,30,120,0.9,5.8,16,0,0,0,0,103.6,,,
+4,"Botanas con proteinas de
+amaranto",0.5,bolsa,20,20,101,1.5,5.8,10.1,0.5,0,0,0,100.4,,,
+4,Charritos de amaranto,0.5,bolsa,20,20,101,1.5,5.8,10.1,0.5,0,0,0,100.4,,,
+4,Cheescake,1,rebanada,30,30,96,1.7,6.8,7.7,0.1,0,0,0,0,,,
+4,Cheetos,20,g,20,20,110,0.8,7.2,10.4,0,0,0,0,128,,,
+4,Cheetos poffs,20,g,20,20,106,1.6,6.4,10.4,0.6,0,0,0,158,,,
+4,Chetos torciditos,20,g,20,20,108,1,7,10.2,0.4,0,0,0,126,,,
+4,"Chicharrón de harina
+enchilado",0.5,bolsa,23,23,106,2.1,5.6,12.5,0.9,0,0,0,0,,,
+4,Chips ahoy,2,pieza,19,19,91,1,4,12.6,0.3,0,0,0,65.9,,,
+4,Choco chispas,4,pieza,18,18,93,1,0.2,12.7,0.2,0,0,0,49.2,,,
+4,Churritos barcel,0.25,paquete,15,15,83,0.8,5.5,7.7,0.7,0,0,0,191.7,,,
+4,Concha pan dulce,0.3,pieza,21,21,87,2.3,3.7,11.1,0,0,7.9,1,82.4,,,
+4,Costra para pay casera,90,g,90,90,109,1.4,7.2,9.8,0.4,0,0,0,0,,,
+4,Dalmata,0.3,pieza,19,19,83,0.8,4,10.9,0.2,0,0,0,47.9,,,
+4,Doraditas,0.5,pieza,18,18,98,0.9,5,12.3,0,0,0,0,139.3,,,
+4,Doritos incognita,0.3,paquete,19,19,90,15.4,4.5,10.8,1,0,0,0,196,,,
+4,Doritos nachos,0.3,paquete,20,20,95,1.6,5,11,1,0,0,0,152,,,
+4,Doritos pizzerolas,0.3,paquete,19,19,93,1.4,4.9,10.8,1,0,0,0,213.5,,,
+4,Eclair de chocolate,0.5,pieza,29,29,98,1.3,4.6,12.8,0,0,5.5,0.4,32.5,,,
+4,Fritos,20,g,20,20,110,1.6,7.2,9.6,1.6,0,0,0,144,,,
+4,"Frituras de maíz con chile
+y limón",0.3,bolsa,19,19,84,0.8,5.3,8.3,0,0,0,1.4,218.2,,64,12
+4,"Frituras de maíz con limón
+y sal",0.3,bolsa,19,19,84,0.8,5.3,8.3,0,0,0,1.4,218.2,,64,12
+4,Galleta de avena con pasas,2,pieza,25,25,110,1,5,15,0,0,0,0,75,,,
+4,Galleta de avena y manzana,1,pieza,24,24,108,0.9,3.5,17.6,0,0,23,0.3,106.5,,,
+4,Galleta integral de trigo,4,pieza,28,28,113,2.4,3.9,19.1,1.6,0,6.4,0.1,153.2,,,
+4,Galleta Oreo,2,pieza,18,18,86,0.9,3.8,12.2,0.4,0,0,0,84.8,,,
+4,Galletas con chispas de chocolate bajas en grasa,2,pieza,20,20,90,1.2,33,14.6,0.8,0,0,0,0,,,
+4,Galletas con chispas de chocolate con mantequilla casera,1.5,pieza,24,24,117,1.4,6.8,14,,0,0,0,0,,,
+4,Gansito,25,g,25,25,99,1.1,3.9,14.9,0.6,0,0,0,55.5,,,
+4,Granola estándar,3,cucharada,21,21,97,2.3,4,14.1,1.1,0,0,0,8.2,,,
+4,"Granola Thins Nature
+Valley",1,pieza,17,17,80,1,4,11,1,0,0,0,75,,,
+4,"Habaneras Bran
+Aráanos Ciruela",35,g,35,35,113,2.7,4.3,16,3,0,0,0,171.5,,,
+4,Pan de jenjibre,1,rebanada,28,28,100,1.1,4.6,13.8,,0,0,0,0,,,
+4,Pan de muesli,1,rebanada,28,28,94,2.5,3.6,13.2,1.4,0,0,0,124.9,,54,15.1
+4,Panqué con mantequilla,0.5,rebanada,20,20,84,1.3,4.3,9.8,,0,10.4,3,71.4,,,
+4,Panquecito cubierto de chocolate,0.5,pieza,24,24,86,1.1,3,14.2,0,0,31,0.2,80.5,,,
+4,Panquecito cubierto de vainilla,0.5,pieza,33,33,119,1.1,3.8,20.6,0,0,16.6,0,74,,,
+4,Panquecito de vainilla,0.5,pieza,33,33,119,1.1,3.8,20.6,0,0,16.6,0.1,74,,,
+4,Papa sal,20,g,20,20,107,1,6.6,11,1,0,0,0,116,,,
+4,Papas sabritas,20,g,195,195,102,0.8,6.4,10.4,0.8,0,0,0,112,,,
+4,Pasta de hojaldre,20,g,20,20,108,1.1,8.2,7.6,0.3,0,3.9,0,1.2,,,
+4,Pasta hojaldrada,20,g,20,20,108,1.1,8.2,7.6,0.3,0,3.9,0,1.2,,,
+4,Pasta quebrada,20,g,28,28,108,1.1,8.2,7.6,0.3,0,3.9,0,1.2,,,
+4,Pastel de chocolate,1,rebanada,28,28,104,1.5,4.2,14.8,0.4,0,16.8,0.5,88.2,,,
+4,"Harina de algodón baja
+en grado",4,cucharada,32,32,106,15.9,0.4,11.5,0,0,0,0,57.6,,,
+4,"Harina de girasol
+parcialmente desgrasada",4,cucharada,32,32,105,15.4,0.5,11.5,1.7,0,0,0,0,,,
+4,"Harina de sésamo baja en
+grasa",4,cucharada,32,32,107,16,0.6,11.4,0,0,0,0,6.4,,,
+4,Kinder delice,0.5,paquete,21,21,95,1,5.9,9,0.5,0,0,0,20,,,
+4,Macarrón con queso,0.25,taza,50,50,108,4.2,5.6,10.1,0,0,90.5,0.5,271.5,,,
+4,Magdalena,0.75,pieza,20,20,92,1.6,4.2,8.9,0,0,0,0,85,,,
+4,Maíz palomero con mantequilla horno de microhondas,2.5,taza,38,38,115,3.5,2.6,25.4,6.1,0,20,0.2,383.8,,,
+4,"Marías Gamesa Cereales
+Chocoplátano",20,g,20,20,120,1.4,2.7,12.6,1.7,0,0,0,84,,,
+4,"Marías Gamesa Cereales
+Fresa",30,g,30,30,121,2.1,4.1,18.9,2.5,0,0,0,126,,,
+4,Muffin integral con pasas,0.3,pieza,37,37,118,2.5,3.2,19.9,2.5,0,42.4,1.8,200.6,,,
+4,Nature valley,0.5,barra,18,18,70,1.5,2,12.5,1.5,0,0,0,32.5,,,
+4,"Nature valley barra
+granola con manzana",1,pieza,21,21,90,1.5,3.2,13,1.2,0,0,0,65,,,
+4,Pop tarts,0.3,pieza,18,18,70,1,1.7,12.9,0.3,0,0,0,73.5,,,
+4,Prispas,0.75,paquete,19,19,91,0.8,3.4,14.3,0.4,0,0,0,131.3,,,
+4,Rice krispies treats,1,barra,22,22,90,1,2.5,17,0,0,0,0,105,,,
+4,Runner sabor hot sauce,0.3,bolsa,20,20,110,1.2,6.9,10.9,0.5,0,0,0,210,,,
+4,Sabritas ligeras,20,g,20,20,97,1.2,4.6,12.8,0.8,0,0,0,80,,,
+4,Sabritas ligeras citricas,20,g,20,20,93,1.2,4.4,12.2,0.8,0,0,0,148,,,
+4,"Sáwich Quaker
+chocolate",30,g,30,30,124,2.7,5.2,16.6,2.8,0,0,0,96,,,
+4,Senzo,2,pieza,22,22,106,1.1,5.1,13.8,0.5,0,0,0,75.4,,,
+4,"Snack mix nabisco 100
+Kcal",1,paquete,22,22,99,2,3,16,1,0,0,0,210.1,,,
+4,Tamal de carne,0.2,pieza,40,40,102,3.1,6,8.8,0.1,0,24.4,0.6,70.4,,,
+4,Tamal de elote,0.2,pieza,40,40,86,1.1,4.3,9.9,0.4,0,43.2,0.3,234.3,,,
+4,Tamal de frijol,0.2,pieza,40,40,103,1.5,7.2,9.1,0.4,0,24.6,0,112.9,,,
+4,Tamal de queso con rajas,0.2,pieza,40,40,104,2,7.1,9.1,0.4,0,41.3,0,130.3,,,
+4,Tamal rojo,0.16,pieza,34,34,103,0.9,6.5,11,0.2,0,,0,,,,
+4,Tamal verde,0.16,pieza,34,34,103,0.9,6.5,11,0.2,0,,0,,,,
+4,Tostada,1.5,pieza,18,18,93,1.2,4.9,11.2,1.2,0,19.3,0.2,131.6,,,
+4,Tostada rayada,1.5,pieza,18,18,93,1.2,4.9,11.2,1.2,0,19.3,0.2,131.6,,,
+4,Tostada tipo jalisco,1.5,pieza,18,18,93,1.2,4.9,11.2,1.2,0,19.3,0.2,131.6,,,
+4,Barra de granola,0.75,pieza,21,21,101,2.2,4.2,13.7,1.1,5.3,12.8,0.6,62.3,,,
+4,Barrita de granola con choco chip,1,pieza,28,28,119,2.1,4.7,19.6,1.4,6,26,0.7,77,,,
+4,Barrita de granola con pasitas y nuez,0.75,pieza,21,21,87,1.7,4.4,13.5,1.2,6.8,18,0.5,54,,,
+4,"Barrita de granola cubierta
+con chocolate",0.75,pieza,21,21,98,1.2,5.3,13.4,0.8,5.3,21.8,0.5,42,,,
+4,Barrita de fresa,0.3,pieza,21,21,97,1.1,3.9,14.4,0.3,26.4,0,1,36.6,,50,10.6
+4,Bigote de cajeta,0.3,pieza,22,22,103,2.4,5,9,0,23.1,39.6,0.4,131.5,,,
+4,Bigotes de chocolate,0.3,pieza,22,22,103,2.4,5,9,0,23.1,39.6,0.4,131.5,,,
+4,Bigotes miniatura de cajeta,2,pieza,26,26,119,2.8,5.8,10.5,0,26.8,45.9,0.5,152.4,,,
+4,Bisquet,0.5,pieza,33,33,118,2,5.4,15.8,0.5,1.9,15.8,1.1,341.7,,,
+4,Brownie casero,1,pieza,24,24,112,1.5,7,12,0,4,14,0.4,82,,,
+4,Brownie comercial,0.5,pieza,28,28,114,1.4,4.6,17.9,0.6,3.5,8,0.6,87.5,,,
+4,Croissant de manzana,0.75,"pieza
+mediana",43,43,109,3.2,3.7,15.9,1.1,37.6,12.8,0.5,117.1,,,
+4,Croutones sazonados,0.75,taza,23,23,105,2.4,4.1,14.3,1.1,9,21.4,0.6,278.4,,,
+4,Cuernitos de manzana,0.75,"pieza
+mediana",43,43,109,3.2,3.7,15.9,1.1,37.6,12.8,0.5,117.1,,,
+4,"Dona glaseada de
+chocolate",0.3,pieza,21,21,102,1,6.6,10.3,0.4,3.5,7.5,0.5,91.8,,,
+4,"Dona glaseada sabor
+chocolate",0.3,pieza,21,21,102,1,6.6,10.3,0.4,3.5,7.5,0.5,91.8,,,
+4,"Galletas cubierta de
+chocolate",1.5,pieza,21,21,103,1.2,5,14.2,0.7,2.3,12,0.8,61.5,,,
+4,Galleta de avena,1,pieza,18,18,81,1.1,3.3,12.4,0.5,1,7,0.5,69,,,
+4,"Galleta de crema de
+cacahuate",1.5,pieza,23,23,108,2.1,5.3,13.2,0.5,7.5,7.5,0.6,93,,,
+4,"Galleta de malvavisco con
+chocolate",2,pieza,26,26,110,1,4.4,17.6,0.6,2,12,0.7,44,,,
+4,Pan dulce. orejas,0.3,pieza,17,17,81,1,4.4,9.6,0.2,13.2,0,0.3,50.8,,,
+4,"Pan tipo muffin con
+mantequilla",0.3,pieza,37,37,112,2.9,3.4,18,0,10.1,61,0.9,228.5,,,
+4,Panqué de nata,0.5,rebanada,23,23,97,1.4,5.6,10.7,0,3.4,5.5,0.4,65,,,
+4,Papa congelada para freir,50,g,50,50,100,1.6,3.8,15.6,1.6,6,4,0.6,15,,,
+4,"Papas fritas con crema
+ácida y cebolla",6,pieza,18,18,98,1.2,6.7,9.2,0.2,4.1,11.5,0.3,129.6,,,
+4,Papas fritas en juliana,6,pieza,30,30,100,1.1,5.6,11.9,1,6.6,3.6,0.5,183.9,,,
+4,Papas fritas light,10,pieza,19,19,100,1.1,5.6,11.9,1,6.6,3.6,0.5,183.9,,,
+4,"Papilla de macarrones con
+pollo",1.5,frasco,20,20,101,4.1,2.9,14.6,0.6,10.5,42.9,1,31.2,,,
+4,Hojaldra,0.3,pieza,28,28,115,2.3,6,13,0.7,8,10.4,0.6,210.8,,,
+4,Muffin con mantequilla,0.3,pieza,37,37,112,2.9,3.4,18,0,10.1,61,0.9,228.5,,,
+4,Nachos,3,pieza,21,21,106,1.7,5.5,13.3,1.1,3,31.5,0.3,150.8,,,
+4,Oreja,0.3,pieza,17,17,81,1,4.4,9.6,0.2,13.2,0,0.3,50.8,,,
+4,Orejas de pan dulce,0.3,pieza,17,17,81,1,4.4,9.6,0.2,13.2,0,0.3,50.8,,,
+4,Palomitas con queso,0.75,taza,21,21,110,2,7,10.8,2.1,2.3,24,0.5,186.8,,,
+4,Pastel de piña,1,rebanada,28,28,89,1,3.4,14.1,,5.3,33.6,0.4,89.3,,,
+4,Pay de chocolate,1,rebanada,30,30,91,0.8,5.8,10.1,0.6,2.1,10.9,0.3,40.9,,,
+4,Pay de manzana,1,rebanada,40,40,95,0.8,4.4,13.6,0.6,1.6,4.5,0.2,106.6,,,
+4,"Salsa gravie de
+champiñones",1,taza,230,230,116,2.9,6.2,12.7,0.9,27.8,15.4,1.5,1310.5,,,
+4,Salsa gravie de res,1,taza,226,226,120,8.5,5.4,10.8,1,3.9,13.5,1.6,1265.8,,,
+4,Totopos de maíz,25,g,25,25,109,1.4,5.6,13.5,1.4,2.7,39.3,0.4,40.8,,,
+4,"Barrita de granola con
+cacahuate",0.3,pieza,19,19,87,1.4,5,11,0.7,0,9.6,0.2,31.7,5.9,,
+4,Chips de platano,0.43,"bolsa
+iividual",21,21,109,0.5,7.1,12.3,1.7,0,0,0,0,7.4,,
+4,Costra para pay congelada,125,g,125,125,101,1.3,5.8,11.3,0.6,0,0,0,0,0.9,,
+4,Croissant,0.5,"pieza
+mediana",29,29,116,2.3,6,13.1,0.7,37.1,10.5,0.6,133.1,3.2,,
+4,Croissant de queso,0.5,"pieza
+mediana",29,29,118,2.6,6,13.4,0.7,29.4,15.1,0.6,102.9,3.2,,
+4,Cuernitos,0.5,"pieza
+mediana",29,29,116,2.3,6,13.1,0.7,37.1,10.5,0.6,133.1,3.2,,
+4,Cuernitos de queso,0.5,"pieza
+mediana",29,29,118,2.6,6,13.4,0.7,29.4,15.1,0.6,102.9,3.2,,
+4,Cuernos,0.5,pieza mediana,29,29,116,2.3,6,13.1,0.7,37.1,10.5,0.6,133.1,3.2,,
+4,Cupcake de chocolate,0.5,pieza,30,30,105,1,3.5,18,1,0,0,0,0,13,,
+4,Dona,0.3,pieza,21,21,90,1,4.9,10.7,0.3,1.8,9.6,0.4,117.3,3.6,76,16.3
+4,Dona azucarada,0.3,pieza,21,21,90,1,4.9,10.7,0.3,1.8,9.6,0.4,117.3,3.6,76,16.3
+4,Dona glaseada,0.3,pieza,21,21,90,1,4.9,10.7,0.3,1.8,9.6,0.4,117.3,3.6,76,16.3
+4,Fruitcake,0.3,rebanada,32,32,104,0.9,2.9,19.9,1.2,0,0,0,0,9.6,,
+4,Galletas con chispa de chocolate,3,pieza,21,21,105,1.3,5.3,13.8,0.7,0,0,0,72.2,6.6,,
+4,Galleta de chocolate con relleno cremoso,2.5,pieza,23,23,106,1.3,4.6,16.5,0.7,0,0,0,0,9.3,,
+4,Galleta de chocolate con relleno cremoso baja en grasa,3,pieza,27,27,119,1.6,3.6,20.6,0.8,0,0,0,0,11.1,,
+4,Galleta de nuez,1.5,pieza,23,23,110,1.5,4.5,15.8,1.9,0,0,0,131.2,5.2,,
+4,Galleta integral,4,pieza,20,20,95,1.7,3.6,13.9,1.1,0,0,0,180,0.5,,
+4,Galleta integral con miel,4,pieza,24,24,110,1.9,3.2,18.2,0.6,0,0,0,90.8,5.2,,
+4,Galleta integral de miel,4,pieza,24,24,110,1.9,3.2,18.2,0.6,0,0,0,90.8,5.2,,
+4,Galleta integral molida,4,cucharada,24,24,114,2.1,4.3,16.6,1.4,0,0,0,216,0.6,,
+4,Galleta salada cremosa,7,pieza,22,22,112,1.4,5.6,14,0,0,0,0,189,1.4,,
+4,Galleta sandwich,2,pieza,21,21,91,0.8,2.1,16.5,0.8,0,0,0,181.1,9.1,,
+4,"Galleta sandwich
+chocolate",2,pieza,21,21,91,0.8,2.1,16.5,0.8,0,0,0,181.1,9.1,,
+4,Galleta sandwich de vainilla,2,pieza,21,21,91,0.8,25.1,16.5,0.8,0,0,0,181.1,9.1,,
+4,Galleta wafers,6,pieza,21,21,105,0.8,4.5,15.8,0.8,0,0,0,30,9.8,,
+4,Galletas con almendras,1.5,pieza,21,21,113,0.8,7.4,12.8,,0,0,0,0,9.8,,
+4,"Galletas con chispas de
+chocolate",0.5,pieza,16,16,80,1,4,10.5,0,0,0,0,0,5,,
+4,Galletas de manzana con pasas,1,pieza,26,26,113,1.3,4.3,17.2,0.6,0,0,0,0,8.8,,
+4,Granola con almendras,3,cucharada,21,21,98,2.5,3.5,14.1,1.1,7,18.1,0.9,7,4.3,,
+4,Granola con avena y miel,3,cucharada,21,21,96,2.3,4,13.7,1.4,6.6,26.7,0.5,8.8,5.7,,
+4,Granola con pasitas y dátiles,3,cucharada,21,21,92,2.1,2.9,15.2,1.3,6.7,16.1,0.9,5.3,6.1,,
+4,Pan tipo muffin de fruta,0.25,pieza,28,28,107,1.3,4.5,15,0.3,20.6,13,0.4,95.8,9.3,,
+4,pan tipo muffin de maíz,0.3,pieza,37,37,144,2.2,3.1,19,1.2,12.4,27.5,1,194.3,2.8,49,18.3
+4,Pan tipo muffin integral,0.3,pieza,37,37,101,2.6,2.8,18,1.7,51.8,23.5,1.6,146.5,3.1,60,22.4
+4,Panqué,0.5,rebanada,20,20,84,1.3,4.3,9.8,0.2,0,10.4,0.3,71.4,5.7,,
+4,Panqué de salvado,1,rebanada,40,40,118,1.6,5.6,13.6,1.2,0,19.2,0.6,79.2,3.2,,
+4,Papa hash brown,0.25,taza,39,39,100,1.2,4.9,13.7,1.2,6.2,5.5,0.2,133.4,0.6,,
+4,Papas fritas,6,pieza,18,18,100,1.1,6.9,9.2,0.6,1.3,4.3,0.3,118.1,0.9,76,13.7
+4,Papas fritas a la francesa,4,pieza,20,20,112,1.2,7.7,10.2,0.7,1.4,4.8,0.3,13.2,1,,
+4,Papas fritas bajas en grasa,7,pieza,21,21,105,1.2,5.4,13.6,0.8,5.7,7.1,0.3,89.9,1.1,,
+4,papas fritas con queso,6,pieza,18,18,99,1.3,6.7,9.1,0.6,3.2,19.8,0.3,135.9,0.9,,
+4,"Papas fritas reducidas en
+grasa",0.75,"bolsa
+iividual",20,20,94,1.1,4.8,12.2,0.7,5.1,6.4,0.3,80.3,0.9,,
+4,harina de cacahuate,4,cucharada,32,32,105,16.7,0.2,11.1,5.1,0,0,0,13.2,2.6,,
+4,"Harina de soya baja en
+grasa",4,cucharada,32,32,120,14.5,2.8,11.2,5.1,0,0,0,1,3.4,,
+4,Harina de soya desgrasada,4,cucharada,32,32,106,15,0.4,12.3,5.6,0,0,0,4.2,6,,
+4,Harina de soya fill fat,3,cucharada,24,24,105,8.3,4.9,8.5,2.3,0,0,0,2.2,1.8,,
+4,Muffin de blueberry,0.25,pieza,28,28,107,1.3,4.5,15,0.3,20.6,13,0.4,95.8,9.3,59,16.7
+4,Muffin de maíz,0.3,pieza,37,37,114,2.2,3.1,19,1.2,12.4,27.5,1,194.3,2.8,49,18.3
+4,Muffin integral,0.3,pieza,37,37,11,2.6,2.8,18,1.7,51.8,23.5,1.6,146.5,3.1,60,22.4
+4,Palomitas garapiñadas,0.75,taza,21,21,91,0.8,2.7,16.6,1.1,1.1,0.9,0.4,43.3,11.2,,
+4,Pan de ajo,1,pieza,28,28,93,2,3.9,12.3,1,0,49.1,0.9,142.5,2.5,,
+4,Pan de ajo con queso,1,pieza,28,28,98,2.5,4.9,11.3,1,0,98.2,0.7,211.2,1,,
+4,Pastel de frutas,1,rebanada,28,28,91,0.8,2.5,17.3,1,0.7,9.1,0.6,75.5,12,47,13.2
+4,"Pastel de zanahoria con
+cubierta de queso crema",0.5,rebanada,28,28,112,1.1,5.7,14.6,0.3,3.2,6.9,0.3,50.6,10.8,,
+4,"Pastelito con relleno
+cremoso y mermelada",0.5,pieza,25,25,98,1.1,3.9,14.8,0.7,0,18.8,0.6,59.5,10.5,,
+4,"Pastelito de chocolate con
+relleno cremoso",1,pieza,30,30,109,1.3,3.2,18.7,0.6,0,0,0,93.9,13.2,,
+4,Pastitas de mantequilla,2,pieza,15,15,84,0.8,4.7,9.6,0,0,3,0.3,30,3,,
+4,Pay de calabaza,1,rebanada,45,45,109,1.8,4.4,15.7,0.8,7.2,28.8,0.4,107.6,8.5,,
+4,"Pay de limón con
+merengue",1,rebanada,35,35,94,0.5,3,16.5,0.4,2.8,19.5,0.2,51.1,8.4,,
+4,Pay de nuez,0.3,pieza,23,23,102,1.5,4.5,13.9,0.2,3.7,5.1,0.2,77.2,6.4,,
+4,Pay de piña,0.3,pieza,28,28,108,1,4.9,15.1,0.1,0,6.6,0.2,120.3,5.3,,
+4,Pay de queso,1,rebanada,35,35,112,1.9,7.9,8.9,0,5.3,17.9,0.2,72.6,7.6,,
+4,Pay helado de limón,1,rebanada,40,40,109,0.9,6.1,13,0.6,0,12.1,0.1,72.7,9.4,,
+4,Puré de papa,0.5,taza,105,105,119,2,4.4,17.5,1.6,8.4,25.2,0.3,332.9,1.5,74,77.7
+4,Roles de canela,0.5,pieza,30,30,100,2,2.2,18,0.2,4.8,12.6,0.6,64.5,8.1,,
+4,Rollo de fresa,1,pieza,30,30,100,1.4,2.1,18.9,0.1,4.8,7,0.4,87,11.7,,
+4,Strudel de manzana,1,rebanada,40,40,110,1.3,4.5,16.5,0.9,2.3,6.2,0.2,107.6,10.4,,
+4,Tortilla de harina,1,pieza,28,28,80,1.9,1.9,13.4,0.1,0,19.9,0.3,214.8,0.1,30,8.4
+4,Tortilla de harina integral,1,pieza,28,28,82,2.5,2.9,11.4,1.2,0,0,0,166.9,0.1,,
+4,Trenza glaseada,0.5,pieza,21,21,85,0.7,3.8,12.2,0.3,1.5,5.5,0.3,70.5,7.2,,
+4,Wafle,1,pieza,35,35,100,2.3,3.4,15.1,0.8,20,107.8,2,223.3,1.8,76,26.6
+4,Wafle con mantequilla,1,pieza,35,35,97,2.3,3.8,13.9,0.6,17.9,17.9,1.6,184.1,1,76,26.6
+4,Wafle estilo casero,1,pieza,31,31,86,2,3.3,12.4,0.4,15.9,15.9,1.4,181.7,0.8,769,23.6
+4,Wafle integral,1,pieza,35,35,84,2.3,2.9,13.2,1.4,10.8,17.9,1.6,198.5,1.3,,
+4,Wafle miniatura,2,pieza,40,40,112,3,3.9,16.3,9,25.8,25.8,2.3,258.1,0.6,,

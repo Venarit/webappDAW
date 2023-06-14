@@ -1,0 +1,83 @@
+r_tipo,nombre,cantidad_sugerida,unidad,peso_bruto,peso_neto,energia,proteina,lipidos,hco,sodio,azucar,iice_glicemico,carga_glicemica
+17,"Aderezo blue cheese bajo en
+calorias",4,cucharada,60,60,86,1.7,15,10.4,582.9,5.1,,
+17,Aderezo de miel,4,cucharada,64,64,70,2.5,2.4,10.7,526.7,7.7,,
+17,"Aderezo de miel y mostaza bajo
+calorias",3,cucharada,45,45,64,1.3,1.8,14.1,424.3,6.4,,
+17,Aderezo fránces bajo en calorías,4,cucharada,60,60,79,0,3.4,13.1,472.5,,,
+17,Aderezo mil islas bajo en calorías,4,cucharada,60,60,96,0.4,6.4,9.6,600,,,
+17,Aderezo ranch bajo en calorías,3,cucharada,45,45,64,1.3,2.8,14.1,398.6,2.6,,
+17,Aderezo ruso bajo en calorías,3,cucharada,45,45,65,0.3,1.7,12.4,390.9,,,
+17,Aderezo tipo cesar bajo en calorías,3,cucharada,45,45,87,1.5,7.3,2.9,812.9,2.9,,
+17,Almera con chocolate,15,g,15,15,77,1.4,5.6,6.6,1.4,4,,
+17,Almo joy,0.3,pieza,16,16,80,4.3,4.3,9.4,23.8,7.4,,
+17,Almo joy miniatura,1,pieza,20,20,98,5.3,5.3,11.7,29.4,9.1,,
+17,Cacahuate confitado (chocolate),4,pieza,16,16,83,2.1,5.4,8,6.6,6,33,2.6
+17,Carlos V,0.5,pieza,11,11,56,0.4,2.8,7.4,16.5,6.6,,
+17,Chispas de chocolate hershey,5,cucharadita,17,17,89,0.8,4.8,10.7,2.2,8.7,43,4.6
+17,Chispas de chocolate,5,cucharadita,18,18,94,1.3,5.2,10.4,13.8,8.9,43,4.5
+17,Chocolate amargo,0.3,pieza,14,14,70,0.7,4.4,8,0.5,6.3,43,3.5
+17,Chocolate blanco,15,g,15,15,81,0.9,4.8,8.9,13.5,8.9,44,3.9
+17,Chocolate blanco son azúcar,19,g,19,19,90,1.7,6.7,9.9,0,,35,3.5
+17,Chocolate con arroz tostado,0.3,barra,13,13,70,1,3.9,7.9,11.4,6.7,,
+17,Chocolate con almeras,0.3,barra,15,15,77,1.3,5,7.8,10.9,6.4,,
+17,Chocolate con azúcar,15,g,15,15,70,0.6,2.5,11.3,5,,43,4.8
+17,Chocolate con galleta y caramelo,0.5,barra,15,15,75,0.7,3.7,9.7,29.7,7.2,44,4.3
+17,Chocolate con leche,15,g,15,15,64,1.4,1.6,11.1,57.3,,43,4.8
+17,"Chocolate con leche con menos del
+10% proteinas",14,g,14,14,60,1.3,1.5,10.3,53.5,,,
+17,"Chocolate con leche y almeras sin
+azúcar",15,g,15,15,86,1.5,6.3,6,24.5,5.3,,
+17,Chocolate con nugar,0.3,pieza,19,19,87,0.8,3.3,13.6,32.3,11.5,,
+17,Chocolate con nugar y cacahuate,0.3,pieza,19,19,90,1.4,4.5,11.5,46.7,9.6,41,47
+17,Chocolate de coco y almeras,0.3,pieza,16,16,78,0.7,4.4,9.7,23.2,7.9,,
+17,Chocolate de leche,0.6,pieza,17,17,88,1.3,4.9,9.8,13,8.4,43,4.2
+17,Chocolate de menta,2,pieza,17,17,68,0.3,2,12.8,0.2,11.2,,
+17,"Chocolate en polvo con más del
+10% proteínas",15,g,15,15,60,1.9,1,11,14.1,,,
+17,"Chocolate en polvo con menos del
+10% proteinas",12,g,12,12,48,0.9,0.4,10.1,45.8,,,
+17,Chocolate en polvo DICONSA,25,g,25,25,94,15,1.1,6,162.5,5.4,54,3.2
+17,Chocolate en polvo sin azúcares,3,cucharadita,15,15,60,3,1.5,9,,,,
+17,Chocolate fuido,0.75,cucharada,14,14,59,0.3,1.5,10.9,6.4,10.4,43,4.7
+17,Chocolate rallado,5,cucharadita,17,17,87,0.9,5.4,9.9,0.7,7.7,43,4.3
+17,Chocolate semi amargo,17,g,17,17,81,0.7,5.1,10.7,1.9,9.3,43,4.6
+17,Chocolate sin azúcar,15,g,15,15,85,2.1,5.8,6.1,0.5,,35,2.1
+17,Cocada,0.75,pieza,21,21,92,5.3,5.3,12.8,30,6,,
+17,Crema en polvo para café,9,cucharadita,18,18,98,0.9,6.4,9.9,32.6,9.9,,
+17,Flan casero,0.2,taza,61,61,89,2.8,2.5,13.9,32.4,14.2,65,
+17,"Flan de caja preparado con leche
+descremada",0.2,taza,61,61,63,1.8,1.1,11.5,69.2,,,9
+17,"Flan de caja preparado con leche
+entera",0.2,taza,61,61,69,1.8,1.8,11.4,68.5,,,
+17,herchey´s creme´n ´araano,0.25,pieza,11,11,57,3.1,3.1,6.2,13.7,5.2,,
+17,Jarabe de coco,5,cucharada,85,85,83,0.4,3.9,6.5,0,,,
+17,Kier delice,0.3,paquete,21,21,95,5.9,5.9,9,20,7.4,,
+17,Kranky,0.3,paquete,15,15,67,2.2,2.2,11,27,6.6,,
+17,Lunetas,0.3,paquete (50),16,16,79,0.7,3.4,11.4,9.7,10.1,33,3.8
+17,Malvavisco con chocolate,0.5,pieza,14,14,59,0.6,2.4,9.5,23.5,6.3,,
+17,Mayonesa baja en grasa,2,cucharada,28,28,93,0,1.9,9.5,149,9.5,,
+17,Mayonesa light,2,cucharada,28,28,93,0,1.9,9.5,149,9.5,,
+17,Mazapan,0.75,pieza,19,19,85,3.8,3.8,11.3,0,9.8,,
+17,Menta cubierta con chocolate,1.5,pieza,14,14,55,0.2,1.5,10.9,24.5,,,
+17,Mole,3,cucharada,48,48,79,1.7,5.3,6.2,64.3,,,
+17,Mole de pepita,1,cucharada,16,16,82,0.9,5,8.2,406.8,,,
+17,Mole poblano,1,cucharada,16,16,91,1.2,6.7,6.7,186.2,,,
+17,Mole poblano en pasta,1,cucharada,16,16,91,1.2,6.7,6.7,186.2,,,
+17,Mole poblano preparado,3,cucharada,48,48,79,1.7,5.3,6.2,64.3,,,
+17,Mousse de chocolate,0.25,taza,50,50,71,1,2.3,11.5,76,8.6,,
+17,Palanqueta de cacahuate,0.3,pieza,15,15,78,2.3,5,7,23.2,6.3,,
+17,"Paleta helada de café con cubierta
+de chocolate y almeras",0.2,pieza,21,21,74,1,5.3,5.5,,5.3,37,2
+17,"Paleta helada de chocolate cubierta
+con chocolate",0.2,pieza,21,21,72,1,4.9,5.9,10.8,,37,2.2
+17,"Paleta helada de crema con café
+cubierta de chocolate y almeras",0.2,pieza,21,21,74,1,5.3,5.5,,5.3,,
+17,"Paleta helada de vainilla cubierta
+con chocolate",0.25,pieza,24,24,83,1.1,5.7,6.9,13.5,,38,2.6
+17,"Paleta helada de vainilla cubierta
+con chocolate y almeras",0.25,pieza,23,23,80,1,5.8,5.8,11.8,,,
+17,Pipián,15,g,15,15,77,0.9,4.7,7.7,381.4,,,
+17,Rompope sin alcohol,0.25,taza,64,64,86,2.4,4.8,8.6,34.5,5.3,,
+17,Salsa de cebollin,25,g,25,25,63,0.3,4.7,3.3,24.1,2.7,,
+17,Salsa de epazote,40,g,40,40,82,1.3,6.2,4.7,178.5,1.4,,
