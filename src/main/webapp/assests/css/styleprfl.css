@@ -104,6 +104,7 @@ select{
     margin-top: 60px;
 }
 
+
 .borrarbtn{
     font-family: monospace;
     color: white;
@@ -114,7 +115,6 @@ select{
     border-radius: 40px;
     border-color: #dc143c ;
     background: #dc143c;
-    margin: auto;
 }
 
 

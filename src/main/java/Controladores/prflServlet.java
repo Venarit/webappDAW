@@ -9,11 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Datos.ActividadDAO;
+import Datos.MacrosDAO;
 import Datos.ObjetivosDAO;
 import Datos.PerfilesDAO;
+import Modelos.Macros;
 import Modelos.Perfiles;
 import Modelos.Usuarios;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.http.HttpSession;
 /**
  *
@@ -62,6 +66,15 @@ public class prflServlet extends HttpServlet {
         
         
         if (registros > 0) {
+            
+            Map<Integer,Macros> map = new HashMap<>();
+            MacrosDAO macrosDAO = new MacrosDAO();
+            List<Macros> macros = macrosDAO.seleccionar();
+            for(Macros i:macros){
+                map.put(i.getIdmacros(), i);
+            }
+            request.getSession().setAttribute("macros", map);
+            
             int idusuario = (int) session.getAttribute("idusuario");
             PerfilesDAO perfilesDAO = new PerfilesDAO();
             List<Perfiles> perfiles = perfilesDAO.seleccionar(idusuario);

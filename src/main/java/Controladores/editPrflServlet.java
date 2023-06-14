@@ -1,12 +1,16 @@
 package Controladores;
 
 import Datos.ActividadDAO;
+import Datos.MacrosDAO;
 import Datos.ObjetivosDAO;
 import Datos.PerfilesDAO;
+import Modelos.Macros;
 import Modelos.Perfiles;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -71,6 +75,15 @@ public class editPrflServlet extends HttpServlet {
         int registros = prflDAO.modificar(perfil);
         
         if (registros > 0) {
+            
+            Map<Integer,Macros> map = new HashMap<>();
+            MacrosDAO macrosDAO = new MacrosDAO();
+            List<Macros> macros = macrosDAO.seleccionar();
+            for(Macros i:macros){
+                map.put(i.getIdmacros(), i);
+            }
+            request.getSession().setAttribute("macros", map);
+            
             int idusuario = (int) session.getAttribute("idusuario");
             PerfilesDAO perfilesDAO = new PerfilesDAO();
             List<Perfiles> perfiles = perfilesDAO.seleccionar(idusuario);

@@ -110,6 +110,7 @@
             </form>
                 
         </div>
+            
                 <button class="borrarbtn" value="borrar" onclick="openModal('modal4')">Borrar perfil</button>
         
         <% List<Actividadm> listaact = (List<Actividadm>) request.getSession().getAttribute("actividad"); %>
@@ -194,6 +195,7 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal('modal4')">&times;</span>
                 <h3>¿Estás seguro?</h3>
+                
                 <button class="yesbtn" value="confirmar" onclick="location.href='<%= request.getContextPath()%>/delete?idperfil=<%= perfil.getIdperfil() %>'">Borrar</button>
             </div>
         </div>
